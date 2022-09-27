@@ -1,0 +1,50 @@
+{
+  "todo": [
+    {
+      "title": "abc",
+      "id": "1663327999731abc",
+      "status": true
+    },
+    {
+      "title": "orkuch",
+      "id": "1663328533795orkuch",
+      "status": false
+    },
+    {
+      "title": "vikash",
+      "id": "1663335350836vikash",
+      "status": false
+    },
+    {
+      "title": "vikash",
+      "id": "1663335351532vikash",
+      "status": false
+    }
+  ],
+  "employee": [
+    {
+      "name": "Binod Kumar Lal",
+      "age": "90",
+      "status": true,
+      "id": "bKwbEke"
+    },
+    {
+      "name": "Kumar ",
+      "age": "99",
+      "status": true,
+      "id": "uAt8zST"
+    },
+    {
+      "name": "Kumar ",
+      "age": "99",
+      "status": true,
+      "id": "GEYCqC6"
+    },
+    {
+      "name": "jyoti kumari",
+      "age": "56",
+      "status": true,
+      "id": "tfqLX2s"
+    }
+  ]
+}

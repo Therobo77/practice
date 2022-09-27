@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+       
+      #container {
+        border: 8px solid greenyellow;
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        margin: 10px auto;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9px;
+        background-color: cyan;
+      
+    }
+
+
+    </style>
+</head>
+<body>
+    <button>
+        <a href="index.html">GO TO PRODUCT PAGE</a>
+    </button>
+    <h1>FOR SELLER</h1>
+    <div id="container">
+       
+        <form id="form">
+            <input placeholder="Product name" id="name"><BR></BR>
+            
+            <input placeholder="Category" id="category"><BR></BR>
+            <input placeholder="img url" id="image"><BR></BR>
+            <input placeholder="Price" id="price"><BR></BR>
+            <select  id="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option><BR></BR>
+            </select><BR></BR>
+            Sold: 
+            <input type="checkbox" id="sold"> <BR></BR>
+            <input type="submit" id="submit" ><BR></BR>
+        </form>
+
+    </div>
+
+</body>
+</html>
+<script>
+    document.querySelector("#form").addEventListener("submit",myfun);
+
+    let array=JSON.parse(localStorage.getItem("Products")) || [];
+   
+    
+    
+    
+    function myfun(){
+        event.preventDefault()
+        let Form=document.querySelector("#form")
+         name=Form.name.value;
+         category=Form.category.value;
+         image=Form.image.value;
+         price=Form.price.value;
+         gender=Form.gender.value;
+         sold=Form.sold.checked
+
+         sample=new Ecom(name,category,image,price,gender,sold)
+         array.push(sample)
+         localStorage.setItem("Products",JSON.stringify(array))
+
+    }
+    function Ecom(n,c,i,p,g,s){
+        this.name=n;
+        this.category=c;
+        this.image=i;
+        this.price=p;
+        this.gender=g;
+        this.sold=s;
+        
+    }
+    
+
+    
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+array.forEach(function (elem){
+    let div1=document.querySelector("div");
+
+    let Name=document.querySelector("div");
+    Name.innerText=elem.name
+    let Category=document.querySelector("div");
+    Category.innerText=elem.category
+    let Price=document.querySelector("div");
+    Price.innerText=elem.price
+    let Image=document.querySelector("div");
+    Image.setAttribute("src",elem.image)
+    let Gender=document.querySelector("div");
+    Gender.innerText=elem.gender 
+
+    div1.append(Name,Category,Price,Image,Gender);
+    document.querySelector("#container").append(div1);
+
+
+}) -->

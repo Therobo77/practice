@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="name" placeholder="Name" >
+    <button onclick="submit()">submit</button>
+    <center>
+</center>
+</body>
+</html>
+<script>
+    // function  sleep(delay){
+    //     .then((res)=>{console.log(re)}).catch((err)=>{console.log(err)}}
+
+
+// function sleep(delay) {
+//     then((res)=>{
+//         console.log(res)
+//     }).catch((err)=>{
+//         console.log(err)});
+// }
+
+// setTimeout(sleep,5000);
+
+
+// function sleep(delay) {
+//     return new Promise((res,rej)=>{
+//         if(typeof delay !== "number" ){
+//             rej('delay is not a number');
+//         }
+//         setTimeout(()=>{
+//             res('Resolved');
+//         },delay);
+//     })
+// }
+
+// sleep(200)
+
+let seats = 100;
+let waiting =110;
+setInterval(() => {
+    waiting--;
+    console.log(waiting);
+}, 1000);
+let submit = () => {
+    let name = document.getElementById('name').value;
+    waiting++;
+    console.log(waiting);
+    let p = new Promise((res,rej) => {
+        console.log('res',res)
+        setInterval(() => { 
+            if(waiting <= seats){
+                res('confirmed')
+            }
+        });
+    });
+
+    p.then((res) =>{
+        alert(`${name}, you ticket is ${res} `)
+    });
+};
+
+// console.log(waiting);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+let seats = 100;
+let waiting =110;
+setInterval(() => {
+    waiting--;
+    console.log(waiting);
+}, 1000);
+let submit = () => {
+    let name = document.getElementById(‘name’).value;
+    waiting++;
+    console.log(waiting);
+    let p = new Promise((res, rej) => {
+        setInterval(() => {
+            if(waiting <= seats){
+                res(‘confirmed’)
+            }
+        });
+    });
+    p.then((resolve) =>{
+        alert(`${name}, you ticket is ${resolve} `)
+    });
+};
+// console.log(waiting);
+</script> -->

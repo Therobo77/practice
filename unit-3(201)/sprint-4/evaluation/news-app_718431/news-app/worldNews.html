@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World News</title>
+  </head>
+  <style>
+    #navbar {
+      width: 100%;
+      padding: 10px 0px;
+      display: flex;
+      justify-content: space-between;
+      background-color: rgb(82, 82, 190);
+      cursor: pointer;
+    }
+    #navbar > div {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      padding-right: 10px;
+    }
+    input {
+      width: 400px;
+      height: 30px;
+      margin-left: 80px;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="./styles/sidebar.css" /> -->
+  <!-- <link rel="stylesheet" href="./styles/world.css" /> -->
+  <body>
+    <div id="navbar">
+      <div>
+        <input
+          type="text"
+          placeholder="Search here ...[ twitter , tesla ]"
+          id="search"
+        />
+      </div>
+
+      <div>
+        <h1 id="in">India</h1>
+        <h1 id="us">USA</h1>
+        <h1 id="ch">China</h1>
+        <h1 id="uk">UK</h1>
+        <h1 id="nz">New Zealand</h1>
+      </div>
+      <!-- - The nav-bar will have following :- 
+     * search box with Id as- "search_box"
+     * Link for different country news with IDs as:-
+       - India :- “in”
+       - Usa :- “us”
+       - China :- “ch”
+       - UK :- “uk”
+       - New Zealand :- “nz” -->
+    </div>
+    <div id="sidebar">
+      
+    </div>
+    <div id="news_result">
+      <!-- - All the news will be appended inside div with id as "news_result".
+      - Every news card will have class as "news" (Show image, title and author only in cards). -->
+    </div>
+  </body>
+</html>
+<script src="./scripts/sidebar.js"></script>
+<script src="./scripts/worldNews.js" type="module"></script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+</head>
+<body>
+    <!-- Create a form with 5 input boxes having following fields
+
+Name
+
+Age
+
+Gender (select tag)
+
+Email
+
+Mobile Number -->
+<form action="">
+    <input type="text" placeholder="write your name" id="name"><br>
+    <input type="number" placeholder="write your age" id="age"><br>
+    <select value="gender" id="gender">
+        <option name="male" id="" value="">select gender</option>
+        <option name="male" id="male" value="male">male</option>
+        <option name="female" id="female" value="female">female</option>
+        <option name="others" id="others" value="others">others</option>
+    </select><br>
+    <input type="email" placeholder="write your email" id="email"><br>
+    <input type="number" placeholder="write your mobile no." id="mobile"><br>
+    <input type="submit" value="signup">
+
+</form>
+</body>
+</html>
+<script>
+let dataarr=[];
+document.querySelector("form").addEventListener("submit",myfun)
+function myfun(){
+    event.preventDefault();
+    let userobj={
+        name:document.querySelector("#name").value,
+        age:document.querySelector("#age").value,
+        gender:document.querySelector("#gender").value,
+        gender:document.querySelector("#gender").value,
+        email:document.querySelector("#email").value,
+        mobile:document.querySelector("#mobile").value,
+    
+        
+    }
+    
+    
+    console.log(dataarr);
+    dataarr.push(userobj);
+}
+
+</script>

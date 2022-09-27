@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flipkartinvent</title>
+</head>
+<body>
+    <div style="display: flex; gap: 50px;">
+        <h1><a href="sh.html">shoes</a></h1>
+        <h1><a href="st.html">t-shirt</a></h1>
+        <h1><a href="tr.html">Trouser</a></h1>
+    </div>
+    <center>
+
+
+        <div>
+            
+            <select name="cetegry" id="ctgra" onchange="ctgrp()">
+                <option value="ctg">cetogery</option>
+                <option value="shoes">Shoes</option>
+                <option value="tshirt">T-shirt</option>
+                <option value="trouser">Trouser</option>
+                </select><BR></BR>
+
+
+            <!-- <form action="" id="form" onsubmit="formA(event)"> -->
+                
+                <input type="text" id="image" name="image" placeholder="image Url"><BR></BR>
+                <input type="text" id="prn" name="prname" placeholder="prname"><BR></BR>
+                <input type="number" id="prp" name="price" placeholder="price"><BR></BR>
+                <!-- <input type="submit" name="add -product" > -->
+
+                <button id="submit" onclick="submit()">submit</button>
+
+            <!-- </form> -->
+        </div>
+
+        
+    </center>
+</body>
+</html>
+<script src="index.js"></script>

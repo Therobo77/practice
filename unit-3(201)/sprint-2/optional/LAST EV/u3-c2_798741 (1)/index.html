@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <style>
+    #navbar{
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border: 1px solid;
+    }
+    #groceries{
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+
+    }
+    .item{
+      text-align: center;
+      border: 1px solid;
+    }
+
+    img{
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+
+  <body>
+    <div id="navbar">
+      <div>login</div>
+      <div>Sign-Up</div>
+      <!-- Give cart link for navigation with id:- cart   -->
+      <div id="cart"><a href="cart.html">Cart</a></div>
+      <!-- For wallet amount Show only number i.e only "500", no extra text like "amount = 500" with id :- "wallet" -->
+      <h3 id="wallet">700</h3>
+      
+    </div>
+
+    <!--Show all groceries here in grid format-->
+    <!-- add an add to cart button to each item, give it HTML class as 'add_to_cart' -->
+    <div id="groceries"></div>
+  </body>
+</html>
+
+<script>
+
+
+  async function alldata(){
+
+    try{
+    let url = 'https://grocery-masai.herokuapp.com/items'
+    let res = await fetch(url)
+    let data = await res.json()
+    console.log(data)
+    apendalldata(data.data)
+  }
+  catch(error){
+    console.log(error);
+  }
+
+  }
+  alldata()
+
+  let cont = document.getElementById('groceries');
+
+  function apendalldata(elem){
+
+    elem.forEach(function(el){
+
+      let main = document.createElement('div');
+      main.setAttribute('class', 'item')
+
+    let photo = document.createElement('div');
+    let img = document.createElement('img');
+    img.src = el.image;
+
+    photo.append(img);
+
+    let name = document.createElement('h3');
+    name.innerText =`NAME: ${el.name}`;
+
+    let price = document.createElement('h2');
+    price.innerText =`Price: ${el.price}`;
+
+    let atc = document.createElement('button');
+    atc.innerText = 'ad to cart';
+    atc.setAttribute('class', 'add_to_cart');
+    atc.addEventListener('click',function(){
+
+      jodo(elem);
+    });
+
+    main.append(photo,name,price,atc);
+
+    cont.append(main);
+
+    });
+
+  }
+
+  let arr = JSON.parse(localStorage.getItem('cart_items')) || [];
+
+  // let product = JSON.parse(localStorage.getItem('products')) || [];
+
+  function jodo(elem){
+
+    arr.push(elem);
+    console.log('arr',arr);
+
+    localStorage.setItem('cart_items',JSON.stringify(arr));
+    
+  }
+  // jodo();
+</script>
+
+<!-- try{
+       let query = document.getElementById("query").value;
+   
+       // console.log(query);
+   
+       let url = `https://www.omdbapi.com/?s=${query}&page=1&apikey=79d5eae9`
+   
+       let res = await fetch(url);
+   
+       let data = await res.json();
+   
+       console.log('data',data);
+   
+       // return data.Search;
+       if(data.Search!==undefined){
+   
+           myapend(data.Search);
+           // details(data.Search);
+       }
+      
+   
+   }catch(err){
+   
+       console.log("err",err);
+   }
+   } -->

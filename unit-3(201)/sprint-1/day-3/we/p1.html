@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <center><h1>PROTO - TYPE</h1></center>
+</body>
+</html>
+
+<script>
+    let cat = {
+        type: 'cat',
+        legs:4,
+        eyes:2,
+        tail:true
+    }
+
+    // let tiger = {
+    //     speed:120
+    // };
+
+     tiger = Object.create(cat);
+
+     tiger.name = 'Tiger';
+
+     tiger.speed = 120;
+
+    console.log(tiger);
+
+lion = Object.create(cat);
+
+lion.name = 'lion';
+
+lion.speed = 90;
+
+console.log(lion);
+
+
+pablo = Object.create(cat);
+
+pablo.name = 'pablo';
+
+pablo.speed = 120;
+
+console.log(pablo);
+
+</script>

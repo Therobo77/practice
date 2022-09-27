@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype</title>
+</head>
+<body>
+    <center><h1>PROTO - TYPE</h1>
+        <form action="" id="form" onsubmit="createdata(event);">
+            <input type="text" id="name" placeholder="name">
+            <input type="submit">
+        </form>
+    
+    </center>
+</body>
+</html>
+
+<script>
+    let students = {
+        type: 'cse',
+        age:18,
+        trac:'js 201',
+        eyes:2,
+        
+    }
+
+    // let tiger = {
+    //     speed:120
+    // };
+
+//      s1 = Object.create(students);
+
+//      s1.name = 'vikash';
+
+//      s1.speed = 120;
+
+//     console.log(s1);
+
+// s2 = Object.create(students);
+
+// s2.name = 'vikash';
+
+// s2.speed = 120;
+
+// console.log(s2);
+
+// s3 = Object.create(students);
+
+// s3.name = 'vikash';
+
+// s3.speed = 120;
+
+// console.log(s3);
+
+
+
+let alldata = [];
+
+function createdata(event){
+
+    event.preventDefault();
+
+    
+    
+    stdnt = Object.create(students);//this is conneced with html form||
+
+    stdnt.name= document.getElementById("name").value;
+
+    // Name.name = stdnt;
+    alldata.push(stdnt);
+
+    console.log(alldata);
+}
+
+</script>

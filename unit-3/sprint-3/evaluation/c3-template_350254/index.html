@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOTEL BOOKING APP</title>
+  </head>
+  <style>
+    body{
+      padding: 0%;
+      margin: 0%;
+    }
+    #navbar{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: rgba(160, 82, 82, 0.35);
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    #sorting{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background-color: cyan;
+      margin-bottom: 10px;
+      height: 40px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+   #hotels_list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 15px;
+    text-align: center;
+   }
+   #hotels_list div{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+   }
+   img{
+    height: 200px;
+    width: 100%;
+    margin-top: 10px;
+   }
+   #hotels_list button{
+    margin-bottom: 20px;
+   }
+  </style>
+  <body>
+    <div id="navbar">
+      <h2>Hotel App</h2>
+      <div>
+        <input oninput="search()" type="text" id="query" placeholder="Search your hotel in goa or mumbai">
+      </div>
+     
+        <h4><a href="signup.html">Signup</a></h4>
+        <h4><a href="login.html">Login</a></h4>
+     
+      <!-- the search-box id:- "query"
+ - the log-in and sign-up link will have ids:- "login" and "signup" -->
+    </div>
+    <div id="sorting">
+      <button id="sort_lth">low to high</button>
+      <button id="sort_hth">high to low</button>
+      <button id="filter_ac">AC</button>
+      <button id="filter_nonac">NON AC</button>
+      <!-- sort by price low to high Id:- "sort_lth"
+ - sort by price high to low Id:- "sort_htl"
+ - Filter Ac hotels Id:- "filter_ac"
+ - Filter Non Ac hotels Id:- "filter_nonac" -->
+    </div>
+    <div id="hotels_list">
+      <!-- - Append all fetched hotels inside div with id:- "hotels_list"
+ - Every hotel card will have id:-  "hotel"
+ - The book now button will have class as "book" -->
+    </div>
+  </body>
+</html>
+<script src="./scripts/index.js">
+  // // API KEY=   `https://masai-mock-api.herokuapp.com/hotels/search?city=${query}`
+
+  // let search = async()=>{
+  //   let query= document.getElementById('query').value;
+  //   let data = await getdata(query);
+  // }
+
+  // let getdata = async(query)=>{
+
+  //   let url=`https://masai-mock-api.herokuapp.com/hotels/search?city=${query}`;
+
+  //   let res = await fetch(url);
+  //   let data = await res.json();
+  //   console.log('vkl',data);
+  //   localStorage.setItem('data', JSON.stringify(data));
+  //   apend(data);
+  // };
+
+  // function apend(data){
+  //   let list= document.getElementById("hotels_list");
+  //   list.innerHTML = null;
+
+  //   data.forEach((el) =>{
+
+  //     let img = document.createElement("img");
+  //     img.src = el.hotels.Images.one;
+
+  //     let h4 = document.createElement("h4");
+  //     h4.innerText = `PRICE: ${el.hotels.Price}`;
+
+  //     let ac=document.createElement("h4");
+  //     ac.innerText =`Ac: ${el.hotels.Ac}`;
+
+  //     let Rating=document.createElement("h3");
+  //     Rating.innerText = `Rating: ${el.hotels.Rating}`;
+
+  //     let btn= document.createElement("button");
+  //     btn.innerText = 'book your room now';
+
+  //     let div=document.createElement("div")
+  //     div.append(img,h4,ac,Rating,btn);
+       
+  //     list.append(div);
+  //   });
+
+  // }
+</script>

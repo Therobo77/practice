@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE APP 1</title>
+</head>
+<style>
+    body{
+        background-color: rgb(41, 41, 40);
+        margin: 0%;
+        padding: 0%;
+    }
+    #movies{
+        
+        height: 500px;
+        width: 505px;
+        margin:0px 870px 0px;
+        overflow: scroll;
+        
+       
+    }
+    #query{
+        
+        width: 500px;
+        height: 40px;
+    }
+    .movie{
+        display: flex;
+        align-items: center;
+        gap: 20px ;
+        padding: 20px;
+        color: white;
+        font-size: large;
+    }
+    .movie img{
+        height: 200px;
+        width: 200px;
+    }
+    #navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(56, 55, 55);
+        color: white;
+    }
+    #hot {
+        padding-left: 30px;
+    }
+    
+</style>
+<body>
+    
+    
+    <div id="navbar">
+    
+    <p id="hot">Hot Star <br> premium</p>
+    <h5>@copy-right Vikash Lal and company</h5>
+    <input oninput="debounce(main,1000)" type="text" id="query" placeholder="YOU CAN SEARCH YOUR FAVORITE MOVIE HERE" >
+</div>
+    
+    <div id="movies"></div>
+
+</body>
+</html>
+<script>
+
+async function main() {
+    let query = document.getElementById("query").value;
+    let data= await getdata(query);
+    append(data);
+    //getdata(query);
+}
+
+
+
+    async function getdata(query){
+        const url = `http://www.omdbapi.com/?apikey=a91f02f8&s=${query}`;
+        let res=await fetch(url);
+        let data=await res.json();
+        return data.Search;
+
+        //console.log(data);
+    
+    }
+
+    function append(data) {
+
+        if(!data){
+            return ;
+        }
+
+        let container = document.getElementById("movies");
+        container.innerHTML = null;
+
+        data.forEach(function(el){
+
+            let img=document.createElement("img");
+            img.src = el.Poster;
+
+            let p=document.createElement("p");
+            p.innerText = el.Title;
+
+            let div=document.createElement("div");
+
+            div.setAttribute('class', 'movie');
+
+            div.append(img,p);
+            container.append(div);
+        });
+
+          
+    }
+
+    let id;
+    
+    function debounce(func,delay){
+        if(id){
+            clearTimeout(id);
+        }
+        id = setTimeout(function(){
+            func();
+        },delay);
+    }
+
+</script>

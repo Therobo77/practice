@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    const url='https://apiv2.api-cricket.com/cricket/?method=get_leagues&APIkey=f2d4169e471d3eb7f6a75772c161df178ef7d6c2bbbd241b63516a6a4b36f6a7'
+
+    let getData =async () =>{
+        let res = await fetch(url);
+        res = await res.json();
+
+        console.log(res.result);
+        console.log(res.result.length);
+    }
+    getData();
+</script>

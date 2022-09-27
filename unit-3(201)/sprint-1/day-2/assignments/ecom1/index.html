@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecom1</title>
+</head>
+
+<body>
+    <!-- E-COMMERCE I
+Constructor Functions
+Level: 1
+Type: applied
+Avg Duration: 2 Hrs
+Problem Statement :-
+After graduating from Masai, you got placed at Amazon as a
+ senior developer. After joining, the company assigned you a
+  task to create an admin panel for the sellers so that they
+   can list their items easily on the site. The company also 
+   told you to use constructor functions and it is mandatory.
+
+Description :-
+1.Make an ECommerce admin panel dashboard (admin.html).
+ 2.This dashboard will be used by the seller for listing the items on the website.
+  3.Make a simple input form which will accept the following entries :-
+
+Product name
+Category
+Image url
+Price
+Gender (select)
+Sold (boolean value) (by default false)
+Use constructor functions to create object data for the product.
+Add a submit button to add the product.
+Use local storage as a database for the seller.
+Once you add the product it should be added to the database in the form of an array of products.
+Things to follow :-
+1.IDs for the input fields :-
+
+Product name : - #name
+Category : - #category
+Image Url : - #image
+Price : - #price
+Gender : - #gender
+Sold : - #sold
+Submit button should have Id as #add
+Products should be stored in the local storage with key ‘Products’. -->
+
+<center>
+    <div>
+
+        <h1>ECOMMERCE -1</h1>
+    
+<form action="" id="form" onsubmit="ecom(event)">
+    <input type="text" id="name" placeholder="pr name"><BR></BR>
+
+    <input type="text" id="category" placeholder="Categery name"><BR></BR>
+
+    <input type="text" id="image" placeholder="Img Url"><BR></BR>
+
+    <input type="number" id="price" placeholder="price"><BR></BR>
+
+    <select name="" id="gender"><BR></BR>
+        <option value="select">gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select><BR></BR>
+
+    SOLD:
+    <input type="checkbox" id="sold"><BR></BR>
+
+    <input type="submit" id="add" ><BR></BR>
+</form>
+
+</div>
+</center>
+
+</body>
+</html>
+
+<script>
+    function CF(n,c,i,p,g,s){
+        this.name = n;
+        this.category = c;
+        this.image = i;
+        this.price = p;
+        this.gender = g;
+        this.sold = s;
+    }
+
+    let arr=[];
+
+    function ecom(event){
+        event.preventDefault();
+
+        let form = document.getElementById("form");
+
+        let name = document.getElementById("name").value;
+
+        let category = document.getElementById("category").value;
+
+        let image = document.getElementById("image").value;
+
+        let price = document.getElementById("price").value;
+
+        let gender = document.getElementById("gender").value;
+
+        // sold = form.sold.Checked;
+        sold = form.sold.checked; 
+
+        let nwpr= new CF(name, category, image, price, gender, sold);
+
+        arr.push(nwpr);
+
+        console.log(arr);
+
+        // localStorage.setItem("Products",JSON.stringify(arr));
+    }
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>choose time</h1>
+    <input type="time" id="time">
+    <button onclick="changeTime()">submit</button>
+</body>
+</html>
+<script>
+    function changeTime() {
+        let time = document.getElementById("time").value;
+        // console.log(time);
+
+        let [hour,mint]=time.split(":");
+
+        let current_time = new Date();
+
+        // console.log(current_time.getHours());
+        // console.log(current_time.getMinutes());
+
+        setInterval(()=>{
+
+            if(hour==current_time.getHours() && mint==current_time.getMinutes()) {
+
+              
+
+                alert('your time is compleated')
+
+                //   let a= new Audio('');
+                // a.play();
+
+            }
+        },1000);
+
+    }
+
+    let data= JSON.parse(localStorage.getItem("data"));
+// undefined
+if(data){console.log('yes')}
+// undefined
+else{console.log('no')}
+</script>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- <link rel="stylesheet" href="./styles/styles.css"> -->
+  </head>
+
+  <body>
+    <div id="navbar">
+      <div>login</div>
+      <div>Sign-Up</div>
+      <!-- Give cart link for navigation with id:- cart   -->
+      <div><a href="cart.html">cart</a></div>
+      <!-- For wallet amount Show only number i.e only "500", no extra text like "amount = 500" with id :- "wallet" -->
+      <h2 id="wallet">700</h2>
+
+    </div>
+    <div id="groceries"></div>
+
+    <!--Show all groceries here in grid format-->
+    <!-- add an add to cart button to each item, give it HTML class as 'add_to_cart' -->
+  </body>
+</html>
+<script>
+
+  const url="https://grocery-masai.herokuapp.com/items"
+
+let ex;
+fetch(url).then(function(res){
+    return res.json()
+}).then(function(res){
+    ex=res
+    console.log(res)
+    append(res.data)
+})
+
+
+function append(ex){
+    ex.forEach(function(elem){
+
+        let groceries=document.getElementById("groceries");
+        let box=document.createElement("div");
+
+        let image=document.createElement("img");
+        image.src=elem.image
+        let price=document.createElement("h1");
+        price.innerText=elem.price
+
+        let add=document.createElement("button");
+        add.innerText="add to cart"
+        add.addEventListener("click",function(){
+            adding(elem)
+        })
+
+        box.append(image,price,add)
+        groceries.append(box)
+    })
+}
+
+let arr=JSON.parse(localStorage.getItem("cart_items")) ||  []
+function adding(elem){
+    
+    arr.push(elem)
+    console.log(arr)
+    localStorage.setItem("cart_items",JSON.stringify(arr));
+
+}
+</script>

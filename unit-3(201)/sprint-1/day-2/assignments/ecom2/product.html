@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD PRODUCT</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    div{
+        text-align: center;
+        border: 1px solid;
+    }
+    img{
+        width: 100%;
+        height: 65%;
+    }
+    #v-navbar{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(93, 169, 169);
+        height: 100px;
+    }
+    #v-container{
+        border: 1px solid;
+       display: grid;
+       grid-template-columns: repeat(4,1fr);
+       grid-gap: 10px;
+    }
+    #v-container>div>button{
+        width: 60px;
+        /* height: 20px; */
+        margin-left: 20px;
+    }
+</style>
+<body>
+    <div id="v-navbar">
+
+        <button>
+            <a href="index.html">YOU CAN ADD PRODUCTS HERE</a>
+        </button>
+
+        <h2>ECOMMERCE DATA BASE</h2>   
+
+        <button>
+            <a href="product.html">SEE YOUR PRODUCTS</a>
+        </button>
+       
+       
+        
+    </div>
+    <center><h1></h1></center>
+    <div id="v-container">
+     
+    </div>
+</body>
+</html>
+<script>
+    let arr = JSON.parse(localStorage.getItem('products')) || [];
+
+    document.querySelector('h1').innerText = `total number Of products: ${arr.length}`;
+
+    let cont = document.getElementById('v-container');
+
+    arr.forEach((element,index) => {
+        
+        let main = document.createElement('div');
+
+        let photo = document.createElement('img');
+
+        photo.src = element.image; 
+
+        let name = document.createElement('div');
+        name.innerText = `NAME:${element.name}`;
+
+        let category = document.createElement('div');
+        category.innerText = `CATEGERY:${element.category}`
+
+        let price = document.createElement('p');
+        price.innerText = `PRICE:${element.price}`;
+
+        let gender = document.createElement('p');
+        gender.innerText = `GENDER:${element.gender}`;
+
+        let sold = document.createElement('p');
+        sold.innerText = `SOLD:${element.sold}`;
+
+        
+
+        if(element.sold === true) {
+            sold.style.backgroundColor = 'red';
+        }
+        else{
+            sold.style.backgroundColor = 'green';
+        }
+
+       
+
+
+       let remove=document.createElement('button');
+        remove.innerText = 'Remove';
+        remove.style.backgroundColor = 'red';
+
+         remove.addEventListener('click',()=>{
+            khatam(index)
+
+         });
+
+
+
+        let ss=document.createElement('button');
+        ss.innerText = 'Sold';
+        ss.style.backgroundColor = 'blue';
+        ss.style.color = 'white';
+
+        ss.addEventListener('click',()=>{
+            badlo(element.sold);
+        });
+
+        
+
+
+        main.append(photo,name,category,price,gender,sold,remove,ss)
+        cont.append(main);
+    });
+
+
+    function khatam(index){
+
+        arr.splice(index, 1);
+
+        localStorage.setItem('products', JSON.stringify(arr));
+
+        window.location.reload();
+    }
+
+    
+    
+</script>
+<!-- //  sold.addEventListener('click',badal());
+
+        // let btn1 = function badal(sold) {
+
+        //     if(sold===true){
+        //         sold=false;
+
+        //     }
+        //     else{
+        //         sold=true;
+        //     }
+        // }; -->

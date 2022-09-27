@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 4,
+      "title": "dsfbgfd",
+      "author": "bgdvxvx"
+    },
+    {
+      "id": 5,
+      "title": "ddf",
+      "author": "sddd"
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

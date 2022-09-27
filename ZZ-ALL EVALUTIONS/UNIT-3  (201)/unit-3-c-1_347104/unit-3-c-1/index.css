@@ -1,0 +1,19 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: azure;
+}
+
+#navbar{
+    border: 2px solid;
+    height: 50px;
+    background-color: aqua;
+    /* padding-bottom: 12%; */
+}
+#v-form{
+    width: 25%;
+    border: 1px solid;
+    margin-top: 30px;
+    height: 300px;
+    background-color: rgb(17, 98, 83);
+}

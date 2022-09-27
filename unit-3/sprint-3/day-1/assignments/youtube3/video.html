@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAY VIDEO</title>
+</head>
+
+<style>
+    #play{
+        display: flex;
+    }
+    #related{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-gap: 10px;
+    }
+</style>
+<body onload="playvideo()">
+
+   <h1>play video with VIKASH LAL</h1>
+        <div id="play">
+
+       
+        <iframe
+        id="play_video"
+        width="560"
+        height="315" 
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <div id="related"></div>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let playvideo = () =>{
+        let video = JSON.parse(localStorage.getItem('video'));
+        console.log(video);
+
+        let id = video.id.videoId;
+        let play_video = document.getElementById('play_video');
+        play_video.src = `https://www.youtube.com/embed/${id}`;
+        newapend()
+       
+    }
+
+
+    newdata=json.JSON.parse(localStorage.getItem('youtubemain'));
+
+    let newapend=()=>{
+
+
+        data.forEach((el) => {
+
+        let img=document.createElement("img");
+        img.src=el.snippet.thumbnails.medium.url;
+
+        let h3=document.createElement("h3");
+        h3.innerText=el.snippet.title;
+         console.log(el,"ok");
+
+        let div=document.createElement("div");
+
+        div.onclick=()  =>{
+            savevideo(el);
+        }
+
+        div.setAttribute("class","video");
+
+        div.append(img,h3);             //saying div.apend is not a function;
+           related.append(div);
+    });
+    }
+
+
+    
+let savevideo = (data)=> {
+    localStorage.setItem("video",JSON.stringify(data));
+
+    window.location.href = 'video.html';
+};
+
+
+
+
+</script>

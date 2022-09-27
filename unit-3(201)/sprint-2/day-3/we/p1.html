@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FETCH ONLINE SHOP</title>
+</head>
+<style>
+    img{
+        width: 200px;
+        height: 200px;
+    }
+    #container{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+    }
+    #container>div {
+        border: 1px solid;
+        text-align: center;
+    }
+</style>
+<body>
+    <center>
+    <h1>FETCH</h1>
+
+    <button onclick="sorthl()">high to low</button>
+    <button onclick="sortlh()">low to high</button>
+
+    <input type="text" oninput="filterkaro()" id="inpt" placeholder="Filter By Name">
+</center>
+
+    <div id="container"></div>
+</body>
+</html>
+
+<script src="p1.js">
+
+</script>

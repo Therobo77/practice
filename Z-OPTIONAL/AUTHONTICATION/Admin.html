@@ -1,0 +1,67 @@
+<!-- npm install -g json-server -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add product</title>
+    <style>
+        div
+        {
+            border: 1px solid;
+            margin-top: 20px;
+            padding: 30px;
+        }
+        #navbar 
+        {
+            border: none;
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <h2><a href="index.html">Go to main page</a></h2>
+        <h2><a href="dashboard.html">Dashboard</a></h2>
+    </div>
+    <div>
+        <center>
+            <h1>
+                CREATE YOUR OWN DATA BASE USING JSON SERVER
+            </h1>
+        </center>
+    </div>
+    <div>
+        <h1>Add Post</h1>
+
+        <input type="text" id="id" placeholder="id">
+        <input type="text" id="title" placeholder="title">
+        <input type="text" id="author" placeholder="author">
+        <button id="submit" onclick="addProduct()">submit</button>
+    </div>
+    <div>
+        <h1>Delete Post</h1>
+        <input type="text" id="id_delete" placeholder="write Id to Delete">
+        <button onclick="deletePost()">delete Post</button>
+    </div>
+
+    <div>
+        <h1>Put Post</h1>
+        <input type="text" id="put_id" placeholder="write Put ID to Put">
+    <button onclick="putPost()">put Post</button>
+    </div>
+    
+    <div>
+        <h1>Update Post</h1>
+        <input type="text" id="Update_id" placeholder="write ID to Update">
+
+        <input type="text" id="Update_tittle" placeholder="write tittle to Update">
+    <button onclick="UpdatePost()">Update Post</button>
+    </div>
+</body>
+</html>
+<script src="Admin.js" ></script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    let dataFromLS=JSON.parse(localStorage.getItem("jobList"))
+    //console.log(x)
+    display(dataFromLS)
+    let BookmarkArr=JSON.parse(localStorage.getItem("Bookmarks")) || []
+     function display(dataFromLS){
+      dataFromLS.forEach(function (elem){
+        let x=document.createElement("tr");
+        let td1=document.createElement("td")
+        td1.innerText=elem.Name
+        let td2=document.createElement("td")
+        td2.innerText=elem.Email
+        let td3=document.createElement("td")
+        td3.innerText=elem.Role
+        let td4=document.createElement("td")
+        td4.innerText=elem.Salary
+        let td5=document.createElement("td")
+        td5.innerText="Bookmark"
+        td5.style.backgroundColor="red"
+        td5.addEventListener("click",function (){
+  BookmarkFun(elem)
+})
+
+        x.append(td1,td2,td3,td4,td5)
+        document.querySelector("#body").append(x)
+      })
+     }
+
+
+function BookmarkFun(elem){
+BookmarkArr.push(elem);
+localStorage.setItem("Bookmarks",JSON.stringify(BookmarkArr))
+}
+  </script>
+</html>

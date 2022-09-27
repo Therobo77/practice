@@ -1,0 +1,40 @@
+
+.ra_crauser {
+    width: 100%;
+    margin: auto;
+    /* margin-top: 20px; */
+    position: relative;
+    background-color: #0f0617;
+    height: 450px;
+    margin-top: -10px;
+  }
+  
+  .ra_crauser > img {
+    width: 100%;
+    display: block;
+    height: 100%;
+  }
+  
+  .ra_crauser> button {
+    position: absolute;
+    top: 35%;
+    background: transparent;
+    border: none;
+    color: black;
+    /* border-radius: 100%; */
+    font-size: 240px;
+    font-weight: bold;
+    font-size: 6rem;
+    /* color: white; */
+    /* width: 50px;
+        height: 50px; */
+    /* background-color: rgba(77, 77, 77, 0.5); */
+  }
+  
+  .ra_crauser > button:nth-child(2) {
+    left: 50px;
+  }
+  
+  .ra_crauser > button:nth-child(3) {
+    right: 50px;
+  }

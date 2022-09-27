@@ -1,0 +1,29 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: cyan;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    text-align: center;
+    margin-top: 20px;
+    /* border: 2px solid orangered; */
+}
+#container div{
+    /* border: 1px solid gray; */
+    /* box-shadow: inset; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 12px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}

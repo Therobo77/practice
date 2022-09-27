@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECOM CONSTRUCtors</title>
+</head>
+<style>
+    div{
+        display: flex;
+        justify-content: space-around;
+        border: 1px solid;
+    }
+</style>
+<body>
+    <div>
+        <button>
+    <h1><a href="data.html">GO TO DATA</a></h1>
+</button>
+<button>
+    <h1>VIKASH</h1>
+</button>
+    </div>
+    <center>
+    <h1>ECOM WEB</h1>
+    <form action="" id="pr_form" onsubmit="nike(event);" >
+        <input type="text" placeholder='name' id="name"><br><br>
+        <input type="number" placeholder='price' id="price"><br><br>
+        <input type="text" placeholder='type' id="type"><br><br>
+        <input type="number" placeholder='rating' id="rating"><br><br>
+        <input type="submit">
+    </form>
+</center>
+
+</body>
+</html>
+<script>
+    let arr=[];
+
+    function ecom(n,p,t,r){
+        this.name = n;
+        this.value = p;
+        this.type = t;
+        this.ratings = r;
+    }
+
+//     let pr1=new ecom('kurta',200,'cloth',4.3);
+//     let pr2=new ecom('lucents',200,'book',4.5);
+// arr.push(pr1);
+// console.log(arr);
+
+
+function nike(event){
+    // arr=[];
+    event.preventDefault();
+
+    let form=document.getElementById("pr_form");
+
+    let name=document.getElementById("name").value;
+
+    let price=document.getElementById("price").value;
+
+    let type=document.getElementById("type").value;
+
+    let rate=document.getElementById("rating").value;
+
+    let prod= new ecom(name, price, type,rate);
+
+arr.push(prod);
+
+console.log('myarr:',arr);
+
+
+}
+
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jewellery</title>
+    <style>
+        *{
+            /* padding: 0%; */
+            /* margin: 0%; */
+            /* border: 1px solid; */
+            background-color: aliceblue;
+        }
+        #navbar {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border: 1px solid;
+        }
+        #option{
+            width: 40%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 20px;
+        }
+        #v-container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 20px;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        #v-container>div{
+            border: 1px solid;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+   <div id="v-navbar"></div>
+   <div id="v-container"></div>
+</body>
+</html>
+<script type="module">
+
+    import navbar from './scripts/navbar.js';
+
+    console.log('navbar', navbar);
+
+    let cont = document.getElementById('v-navbar');
+    cont.innerHTML = navbar;
+
+    
+import {getData,apendData} from './scripts/fetch.js';
+
+console.log('getData:,apendData',getData,apendData);
+
+let url = `https://fakestoreapi.com/products/category/jewelery`;
+
+let res = await getData(url);
+
+console.log('res',res);
+
+let container = document.getElementById('v-container');
+
+apendData(res,container);
+
+</script>

@@ -1,0 +1,11 @@
+#navbar{
+    display: flex;
+    border: 1px solid;
+    justify-content: space-around;
+}
+#footer{
+    display: flex;
+    border: 1px solid;
+    justify-content: space-around;
+    margin-top: 100vh;
+}

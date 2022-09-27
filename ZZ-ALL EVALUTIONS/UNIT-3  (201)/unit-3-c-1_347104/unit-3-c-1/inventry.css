@@ -1,0 +1,33 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: azure;
+}
+
+#navbar{
+    border: 2px solid;
+    height: 50px;
+    background-color: aqua;
+    /* padding-bottom: 12%; */
+}
+#all_products{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+}
+#all_products>div{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid darkgoldenrod;
+
+}
+img{
+    height: 250px;
+    width: 250px;
+}

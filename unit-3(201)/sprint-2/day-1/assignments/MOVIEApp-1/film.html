@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIE APP-1</title>
+</head>
+
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        border: none;
+        /* color: white; */
+        /* background-color: blanchedalmond; */
+    }
+    
+#v-navbar{
+    /* border: 1px solid; */
+    background-color: rgb(30, 58, 49);
+    
+    height: 95px;
+    display: flex;
+    align-items: center;
+    /* border-radius: 150px; */
+    justify-content: space-around;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* margin-bottom: 30px;     */
+}
+#v-form{
+    width: 30%;
+    background-color: rgb(164, 181, 181);
+    height: 350px;
+    padding-top: 80px;
+    /* border-radius: 150px; */
+    padding: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+input{
+    height: 30px;
+    width: 240px;
+    text-align: center;
+}
+#submit{
+    background-color: red;
+    color: white;
+}
+</style>
+
+<body>
+
+    <!-- Create a database of movies of your choice.
+         Each movie object will have properties like ‘name
+         , release date, poster (add url of a poster), IMDb rating, etc.
+
+Create at least 9 movies object, push all of them as array items. Store the array in local storage with key 'movies'.
+
+Whenever the user visits index.html, show the movies in 3*3 grid ( 3 columns, 3 rows ). -->
+
+<div id="v-navbar">
+
+    <div>
+        <p>
+            <a href="index.html">SEE MOVIES</a>
+        </p>
+    </div>
+
+    
+</div>
+
+<center>
+<div id="v-form">
+    <!-- <p style="color: red;">ADD STUDENT DETAILS HERE</p><br> -->
+    <form action="" id="form" onsubmit="Data(event)">
+
+        <center>
+
+        <input type="text" id="name" placeholder="Movie Name" ><BR></BR>
+
+        <input type="text" id="date" placeholder="Release Date" ><BR></BR>
+
+        <input type="url" id="url" placeholder="Poster URL" required><BR></BR>
+
+        <input type="number" id="rating" placeholder="IMDB RATING" required ><BR></BR>
+
+        <input type="submit"  id="submit">
+
+    </center>
+    </form>
+</div>
+</center>
+
+</body>
+</html>
+
+<script src="film.js"></script>
+
+
+<script>
+
+</script>

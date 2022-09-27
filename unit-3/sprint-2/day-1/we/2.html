@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TYPING</title>
+</head>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+<body>
+    <H1>Asychronous Programming</H1>
+    <h1>Typing speed test</h1>
+    <h2 id="type"></h2>
+    <input type=" text" id="typehere" placeholder="Type the given name">
+    <BR></BR>
+    <h3>Customer support: Before buying and product or service
+         customers <br> can read the reviews and feedback and hence 
+         make a smart choice</h3>
+
+</body>
+</html>
+
+<script>
+    let name = "Customer support: Before buying and product or service customers can read the reviews and feedback and hence make a smart choice";
+    function test() {
+        let count =0;
+
+        let text = document.getElementById("typehere");
+
+
+        let id= setInterval(function() {
+            if(text.value===name){
+                alert("hurrey mai jit gaya");
+                clearInterval(id);
+            }
+            if(count==150){
+                text.disabled="true";
+                alert("Try again later");
+                
+                clearInterval(id);
+            }
+
+
+            let h2=document.getElementById("type");
+            h2.innerText = count;
+            count++;
+        }, 1000);
+    }
+
+    test();
+</script>

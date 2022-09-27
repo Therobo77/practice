@@ -1,0 +1,137 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+  </head>
+  <style>
+    body {
+      background-color: beige;
+    }
+    #user-form {
+      width: 20%;
+      margin: auto;
+      padding: 20px;
+      margin-top: 80px;
+      border: 20px solid;
+      display: flex;
+      background-color: rgb(116, 58, 58);
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      border-radius: 9px;
+    }
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    input {
+      height: 30px;
+      border-radius: 8px;
+      padding-left: 16px;
+    }
+    #submit {
+      background-color: rgb(66, 79, 79);
+      padding: 8px 130px;
+      color: white;
+    }
+    select {
+      padding: 5px 0px;
+    }
+    #submit:hover {
+      background-color: red;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+  </style>
+  <!-- <link rel="stylesheet" href="./styles/navbar.css" /> -->
+  <body>
+    <div id="navbar">
+      <h3>News App</h3>
+      <h3>Sign-Up</h3>
+      <h3>
+        <a href="worldNews.html">World News</a>
+      </h3>
+    </div>
+    <div id="user-form">
+      <form action="" id="myform">
+        <input type="text" placeholder="Enter your  url" id="image"/>
+        <input type="text" placeholder="Enter your name" id="name" />
+        <input type="text" placeholder="Enter you Email" id="email" />
+        <select name="" id="user_country">
+          <option value="in">India</option>
+          <option value="ch">China</option>
+          <option value="nz">Newzeland</option>
+          <option value="us">USA</option>
+          <option value="uk">UK</option>
+        </select>
+      </form>
+      <button id="submit" onclick="submit()">Submit</button>
+   
+      
+        <!-- Profile Pic, (Id:- image)
+             Name, (Id:- name)
+             Email, (Id:- email)
+             country, (Id: country) >> Dropdown with options "India", "China", "Newzeland", "USA", "UK.  
+             ** Submit button will have Id:- "submit". --> 
+          <!-- <h2>Sign-up</h2><BR></BR> -->
+      
+    </div>
+  </body>
+</html>
+<script src="./scripts/index.js"></script>
+
+<!-- 
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <div id="navbar">
+      <h3>News App</h3>
+      <h3>Sign-Up</h3>
+      <h3>
+        <a href="worldNews.html">World News</a>
+      </h3>
+    </div>
+    <center>
+   
+  
+  
+          <input type="text" id="image" placeholder="Image Url" name="Image Url" ><BR></BR>
+  
+          <input type="text" id="name" placeholder="name" name="name"><BR></BR>
+  
+          <input type="email" id="email" placeholder="email" name="email"><BR></BR>
+
+          <select name="country" id="country" >
+            <option value="select" >select</option>
+            <option value="in" id="India">India</option>
+            <option value="ch" id="China">China</option>
+            <option value="nz" id="Newzeland">Newzeland</option>
+            <option value="us" id="USA">USA</option>
+            <option value="uk" id="UK">UK</option>
+           </select> <br><br>
+          
+         <button id="submit" onclick="Vsubmit()">submit</button>
+        
+    </div> -->
+<!--     
+  </center>
+  </body>
+</html>
+<script src="./scripts/index.js"></script> --> 

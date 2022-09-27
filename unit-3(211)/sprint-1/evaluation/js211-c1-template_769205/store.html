@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Store</title>
+    <style>
+      #navbar {
+        display: flex;
+        gap: 40px;
+      }
+      img{
+        width: 300px;
+      }
+      div{
+        border: 1px solid;
+        padding: 20px;
+        text-align: center;
+      }
+      #mobile_list{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- On store page append all mobiles inside div with Id :- "mobile_list",
+Each mobile card will have class :- "mobile"
+every remove button will have class :- "remove"
+Sort from low to high button Id:- "sort_lth"
+sort from high to low button Id:- "sort_htl"
+select tag fro filtering will have Id:- "select_filter"
+Must provide these brands as options :- 
+a. apple
+b. oneplus
+c. nokia 
+// Do not add extra text to price, only number should be there as shown below
+// Price: 60000 (wrong)
+// 60000 (Right)
+
+-->
+
+<div id="navbar">
+  <h2>mobile app</h2>
+  <a id="home" href="index.html">HOME</a>
+  <a id="store" href="store.html">STORE</a>
+</div>
+
+<div id="upper">
+  <button id="sort_lth" onclick="sortLth()">Sort low to high</button>
+  <button id="sort_htl" onclick="sortHtl()">Sort high to low</button>
+
+  <select  id="select_filter" name="select_filter">
+
+    <option value="apple" name="apple">Apple</option>
+    <option value="oneplus" name="oneplus">OnePlus</option>
+    <option value="nokia" name="nokia">Nokia</option>
+  </select>
+</div>
+
+<div id="mobile_list"></div>
+  </body>
+</html>
+<script src="./scripts/store.js"></script>

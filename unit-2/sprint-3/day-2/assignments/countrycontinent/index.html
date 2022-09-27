@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country_continent.html</title>
+</head>
+<body>
+    <select id = "continent_select">
+        <option value = "India"> India </option>
+        <option value="UnitedStatesofAmerica">United States of America</option>
+        <option value="China">China</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="SouthAfrica">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option>	
+    </select>
+    <button id="btn">FIND CONTINENT</button>
+</body>
+</html>
+<script>
+     //document.querySelector("#btn").addEventListener("click", chkcont);
+     document.querySelector("#btn").addEventListener("click", findContinent);
+    function findContinent(){
+        // let contry=document.querySelector("#continet_select").value;
+        let country = document.querySelector("#continent_select").value;
+        switch (country) {
+            case "India": alert("This country is a part of continent Continent is asia");
+                break;
+            case "UnitedStatesofAmerica":alert("This country is a part of North  America Continent")
+                break;
+            case "China":alert("This country is a part of Asia Continent")
+                break;
+            case "Nepal":alert("This country is a part of Asia Continent")
+                break;
+            case "Australia":alert("This country is a part of Australia Continent")
+                break;
+            case "France":alert("This country is a part of Europe Continent")
+                break;
+            case "Germany":alert("This country is a part of Europe Continent")
+                break;
+            case "SouthAfrica":alert("This country is a part of Africa Continent")
+                break;
+            case "Nigeria":alert("This country is a part of Africa Continent")
+                break;
+            case "Mexico":alert("This country is a part of North  America Continent")
+                break;
+            case "Argentina":alert("This country is a part of South  America Continent")
+                break;
+            case "Brazil":alert("This country is a part of South  America Continent")
+                break;
+            case "Canada":alert("This country is a part of North  America Continent")
+                break;
+                case "Singapore":alert("This country is a part of Asia Continent")
+                break;
+            case "Sweden":alert("This country is a part of Europe Continent")
+                break;
+            
+        }
+    }
+</script>

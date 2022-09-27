@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>
+      Click on button in this document to find out which element triggered the
+      onclick event.
+    </p>
+
+    <button>This is a button</button>
+
+    <p id="demo"></p>
+
+    <script>
+      document.querySelector("button").addEventListener("click", myFunction);
+      function myFunction() {
+        var x = event.target;
+        document.getElementById("demo").innerHTML =
+          "Triggered by a " + x.tagName + " element";
+      }
+    </script>
+  </body>
+</html>

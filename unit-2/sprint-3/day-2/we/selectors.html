@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button id="btn1">Change H1</button>
+        <button id="btn2">Change H3</button>
+        <button id="btn3">Change H5</button>
+        <button id="btn4">Change Green</button>
+        <button id="btn5">Change Red</button>
+        <button id="btn6">Change Blue</button>
+        
+    </body>
+</html>
+<script>
+    document.querySelector("#btn1").addEventListener("click",changeh1);
+
+    function changeh1(){
+        document.querySelector("h1").style.color="red";
+    }
+    //On clicking the button Change H3 the colour of all <h3> should turn to green
+   document.querySelector("#btn2").addEventListener("click",changeh3);
+
+function changeh3(){
+    var h33=document.querySelectorAll("h3")
+    for(let i=0; i<h33.length ; i++){
+        h33[i].style.color="green";
+    }
+}
+//On clicking the button Change H5 the colour of all <h5> should turn to blue
+    document.querySelector("#btn3").addEventListener("click",changeh5);
+
+function changeh5(){
+    var h55=document.querySelectorAll("h5")
+    for(let i=0; i<h55.length ; i++){
+        h55[i].style.color="blue";
+    }
+}
+//On clicking Change Green all the elements with the class green should change to green
+document.querySelector("#btn4").addEventListener("click",changegrn);
+
+function changegrn(){
+    var grn1=document.querySelectorAll(".green")
+    for(let i=0; i<grn1.length ; i++){
+        grn1[i].style.color="green";
+    }
+}
+//On clicking Change Blue all the elements with the class blue should change to blue
+document.querySelector("#btn6").addEventListener("click",changeblu);
+
+function changeblu(){
+    var bl1=document.querySelectorAll(".blue")
+    for(let i=0; i<bl1.length ; i++){
+        bl1[i].style.color="blue";
+    }
+}
+//On clicking Change Red all the elements with the class red should change to red
+document.querySelector("#btn5").addEventListener("click",changerd);
+
+function changerd(){
+    var rd1=document.querySelectorAll(".red")
+    for(let i=0; i<rd1.length ; i++){
+        rd1[i].style.color="red";
+    }
+}
+</script>

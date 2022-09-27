@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+    #main{
+        display: flex;
+        justify-content: space-around;
+        /* align-items: center; */
+        margin-top: 20px;
+        height: 250px;
+       
+    }
+
+#container {
+/* display: flex; */
+width: 30%;
+justify-content: space-around;
+align-items: center;
+text-align: center;
+/* border: 1px solid; */
+    }
+.mapouter {
+/* border: 1px solid; */
+position:relative;
+text-align:right;
+height:250px;
+width:60%;
+    }
+.gmap_canvas {
+/* border: 1px solid; */
+overflow:hidden;
+background:none!important;
+height:250px;
+/* width:600px; */
+    }
+</style>
+
+<body>
+
+    <input type="text" id="city" placeholder="ENTER CITY NAME">
+    <button onclick="getwether()">submit</button>
+
+    <div id="main">
+    
+    <div id="container"></div>
+
+    <div class="mapouter">
+
+        <div class="gmap_canvas">
+            <iframe width="600"
+             height="500"
+              id="gmap_canvas"
+
+             src=""
+
+               frameborder="0"
+               scrolling="no" 
+               marginheight="0"
+               marginwidth="0">
+            </iframe>
+            <a href="https://123movies-to.org">
+                123 movies
+            </a><br>
+
+                <a href="https://www.embedgooglemap.net">how to get google map embed code</a>
+    
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script src="index.js">
+
+</script>
+<!-- 
+
+https://www.omdbapi.com/?s=${movie}&page=1&a91f02f8&s
+
+http://www.omdbapi.com/?apikey=[yourkey]&
+
+http://www.omdbapi.com/?apikey=a91f02f8&s=${query} -->

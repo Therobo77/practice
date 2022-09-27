@@ -1,0 +1,125 @@
+
+
+
+async function main(){
+
+    
+    try{
+       let query = document.getElementById("query").value;
+   
+       // console.log(query);
+   
+       let url = `https://www.omdbapi.com/?s=${query}&page=1&apikey=79d5eae9`
+   
+       let res = await fetch(url);
+   
+       let data = await res.json();
+   
+       console.log('data',data);
+   
+       // return data.Search;
+       if(data.Search!==undefined){
+   
+           myapend(data.Search);
+           // details(data.Search);
+       }
+       else{
+        let err = document.getElementById('error');
+        err.src = 'https://th.bing.com/th/id/OIP.FxTdULSCUZ02kEJQ4Sli2QHaE3?w=270&h=180&c=7&r=0&o=5&dpr=1.75&pid=1.7'
+       }
+      
+   
+   }catch(err){
+   
+       console.log("err",err);
+   }
+   }
+   
+   let movie = document.getElementById('main');
+   
+    
+   function myapend(data){
+   
+       movie.innerHTML = null;
+   
+       data.forEach(function(el){
+   
+           let mainmovie = document.createElement('div');
+   
+           let film = document.createElement('div');
+   
+           let poster= document.createElement('img');
+           poster.src = el.Poster;
+   
+           film.append(poster);
+   
+           let filmdetail = document.createElement('div');
+   
+           let title = document.createElement('h3');
+           title.innerText =`Movie: ${ el.Title}`;
+   
+           let yor = document.createElement('h2');
+           yor.innerText =`Year: ${ el.Year}`;
+   
+           let imdb = document.createElement('p');
+           imdb.innerText =`IMDB-ID: ${ el.imdbID}`;
+   
+           filmdetail.append(title,yor,imdb);
+   
+           mainmovie.append(film,filmdetail);
+           // mainmovie.addEventListener('click',function(e){
+           //     details(e);
+           // });
+   
+           movie.append(mainmovie);
+       });
+   }
+   
+   
+   // function details(el){
+   
+   //     movie.innerHTML = null;
+   //     mainmovie.style.marginTop = "40px";
+   //     let mainmovie = document.createElement('div');
+   
+   //     let film = document.createElement('div');
+   
+   //     let poster= document.createElement('img');
+   //     poster.src = el.Search.Poster;
+   
+   //     film.append(poster);
+   
+   //     let filmdetail = document.createElement('div');
+   
+   //     let title = document.createElement('h3');
+   //     title.innerText =`Movie: ${ el.Search.Title}`;
+   
+   //     let yor = document.createElement('h2');
+   //     yor.innerText =`Year: ${ el.Search.Year}`;
+   
+   //     let imdb = document.createElement('p');
+   //     imdb.innerText =`IMDB-ID: ${ el.Search.imdbID}`;
+   
+   //     filmdetail.append(title,yor,imdb);
+   
+   //     mainmovie.append(film,filmdetail);
+   //     movie.append(mainmovie);
+   
+   // }
+   
+   // -------- DEBOUNCE --------------
+   
+   let id;
+   
+   function debounce(func,delay){
+       
+       if(id){
+           clearTimeout(id);
+       }
+   
+        id = setTimeout(function(){
+   
+           func();   //our main function
+       },delay);
+   }
+   

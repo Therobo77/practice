@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+            /* position: absolute; */
+            /* background-color: aqua; */
+        }
+        div{
+            border: 1px solid;
+            width: 43%;
+            height: 450px;
+            margin-top: 60px;
+            background-color: aquamarine;
+            color: white;
+            padding-top: 10px;
+           
+        }
+        input{
+            margin-top: 15px;
+            width: 80%;
+            height: 30px;
+        }
+        select{
+            width: 81%;
+            height: 37px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1>LEARNING MANAGEMENT SYSTEM</h1>
+            <form action="" id="form" onsubmit="submit(e)">
+                <input type="text" id="name" placeholder="Enter your name"><BR></BR>
+                <input type="text" id="email" placeholder="Enter your Email"><BR></BR>
+                <input type="text" id="password" placeholder="Enter your Password"><BR></BR>
+                <select name="" id="select">
+                    <option value="" id="">select</option>
+                    <option value="Admin" id="admin">Admin</option>
+                    <option value="Student" id="student">Student</option>
+                </select><BR></BR>
+                <input type="submit" value="Save" id="save" placeholder="Submit" >
+
+            </form>
+        </div>
+    </center>
+    
+</body>
+</html>
+
+<script src="index.js">
+
+    function submit(e) {
+            e.preventDefault();
+            window.location.href = 'selection.html';
+    }
+</script>
+<!-- <script src="login.js"></script> -->

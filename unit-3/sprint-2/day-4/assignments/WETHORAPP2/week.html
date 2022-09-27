@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK FORECAST</title>
+</head>
+<style>
+    body{
+        background: linear-gradient(45deg, #3ca947, #1b7453 40%, #9a3e25 59%, #1b6889 85%, #80361b);
+}
+#navbar{
+    /* width: 50%;
+    height: 200px; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #7f9581, #ede026 40%, #ea3a0a 59%, #07a8ed 85%, #040100);
+}
+#citybox{
+    height: 30px;
+    width: 70%;
+}
+/* #heading{
+    width: 60%;
+    height: 50px;
+    font-size: 30px;
+    margin: auto;
+    margin-left: 150px;
+} */
+#city{
+    width: 50%;
+    height: 40px;
+    margin: auto;
+   
+}
+#city+button{
+    /* margin-left: 200px;
+    margin-top: 20px; */
+    /* width: 45%;
+    height: 40px; */
+    cursor: pointer;
+    background-color: brown;
+    border: transparent;
+    font-weight: bold;
+    border-radius: 4px;
+}
+#namec1{
+    width: 100%;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+#weatherLogo{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: auto;
+    margin-top: 40px;
+    height: 250px;
+    width: 80%;
+
+}
+.logos{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    width: 25%;
+    height: 100%;
+    text-align: center;
+    border-radius: 10px;
+}
+.logos img{
+    width: 70%;
+    height: 100px;
+}
+p{
+    color: white;
+    font-size: large;
+}
+#add{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+</style>
+
+<body onload="defaultPage()">
+    <div id="navbar">
+      <!-- <h1 id="heading">WEATHER FORECAST APP</h1> -->
+      <p id="city">
+       
+        <input type="text" id="citybox" placeholder="Type city name here" />
+      </p>
+      <button onclick="GetDetails()">Click Here</button>
+      <h2 id="namec1"></h2>
+    </div>
+
+    <div id="weatherBox">
+      <div id="weatherLogo">
+        <!-- box1 -->
+        <div class="logos">
+          <p class="climate" id="day1"></p>
+          <div class="icons">
+            <img
+              src=""
+              class="iconClass"
+              id="icon1"
+              alt=""
+            />
+          </div>
+          <p class="minValue" id="day1Min">Loading......</p>
+          <p class="maxValue" id="day1Max">Loading......</p>
+        </div>
+
+        <!-- box2 -->
+        <div class="logos">
+          <p class="climate" id="day2"></p>
+          <div class="icons">
+            <img
+              src=""
+              class="iconClass"
+              id="icon2"
+              alt=""
+            />
+          </div>
+          <p class="minValue" id="day2Min">Loading......</p>
+          <p class="maxValue" id="day2Max">Loading......</p>
+        </div>
+
+        <!-- box3 -->
+        <div class="logos">
+          <p class="climate" id="day3"></p>
+          <div class="icons">
+            <img
+              src=""
+              class="iconClass"
+              id="icon3"
+              alt=""
+            />
+          </div>
+          <p class="minValue" id="day3Min">Loading......</p>
+          <p class="maxValue" id="day3Max">Loading......</p>
+        </div>
+
+        <!-- box4 -->
+        <div class="logos">
+          <p class="climate" id="day4"></p>
+          <div class="icons">
+            <img
+              src=""
+              class="iconClass"
+              id="icon4"
+              alt=""
+            />
+          </div>
+          <p class="minValue" id="day4Min">Loading......</p>
+          <p class="maxValue" id="day4Max">Loading......</p>
+        </div>
+
+        <!-- box5 -->
+        <div class="logos">
+          <p class="climate" id="day5"></p>
+          <div class="icons">
+            <img
+              src=""
+              class="iconClass"
+              id="icon5"
+              alt=""
+            />
+          </div>
+          <p class="minValue" id="day5Min">Loading......</p>
+          <p class="maxValue" id="day5Max">Loading......</p>
+        </div>
+        <!-- boxend -->
+
+
+
+
+
+      </div>
+    </div>
+    <center>
+    <h1>VIKASH KUMAR LAL</h1>
+    <h3>adds</h3>
+</center>
+<div id="add">
+    <div>
+        <img src="https://c.tenor.com/6NsGHhkq9OcAAAAM/oh-yeah.gif" alt="">
+    </div>
+    <div>
+        <img src="https://c.tenor.com/kU870YA9iNEAAAAM/trust-me-im-a-doctor-trust-me.gif" alt="">
+    </div>
+    <div>
+        <img src="https://c.tenor.com/NDTNsJVfGHQAAAAM/big-teeth-flying-kiss-ramzan-shahrukh.gif" alt="">
+    </div>
+    <div>
+        <img src="https://c.tenor.com/8M-qrRMjlhMAAAAM/thaggedhe-le-allu-arjun.gif" alt="">
+    </div>
+</div>
+  </body>
+</html>
+<script>
+    // api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+//https://api.openweathermap.org/data/2.5/forecast?q=odisha&appid=7fac8e01c8a4f8b0ecdb068a24d4e8a2
+
+
+function GetDetails(){
+    let newName = document.getElementById("citybox");
+    let namec1 = document.getElementById("namec1");
+    namec1.innerHTML = newName.value;
+
+
+fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${newName.value}&appid=7fac8e01c8a4f8b0ecdb068a24d4e8a2`)
+.then(response => response.json())
+.then(data =>{
+    for(let i=0;i<5;i++){
+        document.getElementById("day"+(i+1)+"Min").innerHTML = "Min:" + Number(data.list[i].main.temp_min - 273.15).toFixed(1)+"°C"
+    }
+    for(let i=0;i<5;i++){
+        document.getElementById("day"+(i+1)+"Max").innerHTML = "Max:" + Number(data.list[i].main.temp_max - 273.15).toFixed(1)+"°C"
+    }
+    for(let i=0;i<5;i++){
+        document.getElementById("icon" + (i+1)).src = "http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
+    }
+})
+
+.catch(err => alert("Something Went Wrong"))
+
+}
+
+function defaultPage(){
+    document.getElementById("citybox").defaultValue = "Ranchi";
+    GetDetails();
+}
+
+let d = new Date();
+let weekday = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday"];
+
+function checkDay(day){
+    if(day +d.getDay() > 6){
+        return day+ d.getDay()-7;
+    }
+    else{
+        return day+d.getDay();
+    }
+}
+
+
+for(let i=0;i<5;i++){
+    document.getElementById("day"+(i+1)).innerHTML = weekday[checkDay(i)];
+}
+</script>

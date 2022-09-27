@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI CALCULATOR</title>
+    <style>
+        div{
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+        #btn{
+            color:white;
+            background-color: red;
+            font-family: initial;
+            border-radius: 10px;
+        }
+        label{
+            color: rgb(219, 187, 27);
+        }
+        
+        h1{
+            color: blue;
+        }
+        h2{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+   
+    <div>
+    <h1>CHECK YOUR BMI</h1>
+    <label for=""> put your weight in kg</label>
+    <br>
+    <input type="number" placeholder="weight in kg" id="wt">
+    <br>
+    <label for="">put your height in cm</label>
+    <br>
+    <input type="number" placeholder="height in cm" id="ht">
+    <br>
+    <button id="btn">calculate your BMI</button>
+    <h2 id="res">RESULT</h2>
+
+</div>
+
+    
+</body>
+</html>
+
+<script>
+let weight=document.querySelector("#wt");
+let height=document.querySelector("#ht");
+let button=document.querySelector("#btn");
+let res=document.querySelector("#res");
+
+button.addEventListener("click",findbmi);
+
+function findbmi(){
+    let wtvalue= +(weight.value);
+    let htvalue= +(height.value)/100;//to change meter to cm ..../100;
+    let bmi=wtvalue/(htvalue*htvalue)
+    //console.log(bmi)
+    let resvalue="";
+
+    if (bmi<=18.4){
+       resvalue="Under Weight";
+
+    }
+    else if (bmi >= 18.5 && bmi <= 24.9){
+       resvalue="Normal Weight";
+
+    }
+    else if (bmi >= 25 && bmi <= 29.9){
+       resvalue="Overweight";
+
+    }
+    else {
+       resvalue="Obese";
+
+    }
+    //console.log(resvalue)
+    res.innerText="Your BMI is "+bmi+" Which Means You are "+resvalue;
+
+
+}
+</script>

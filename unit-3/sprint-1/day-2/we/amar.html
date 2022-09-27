@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmarAkbarAntheny</title>
+</head>
+<style>
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    }
+    #container>div{
+        border: solid 1px;
+        height: 400px;
+        width: 300px;
+        display: flex;
+        display: inline-grid;
+        justify-content: center;
+        align-items: center;
+        background-color: aliceblue;
+        border-radius: 15%;
+        
+    }
+    button {
+        border-radius: 10px;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        width: 200px;
+    }
+</style>
+<body>
+    <div id="container">
+        <!-- Amar is a singer, lives in Goa.
+
+        Akbar is a chef, lives in Mumbai.
+        
+        Anthony is a Magician, lives in Kashmir. -->
+        <div>
+            <h1>Amar</h1>
+            <h3>skill:Singer</h3>
+            <h3>Place:Goa</h3>
+            <button>Switch to Akbar</button><BR></BR>
+            <button>Switch to Antheny</button>
+        </div>
+        <div>
+            <h1>Akabar</h1>
+            <h3>skill:chef</h3>
+            <h3>Place:Mumbai</h3>
+            <button>Switch to Amar</button><BR></BR>
+            <button>Switch to Antheny</button>
+        </div>
+        <div>
+            <h1>Anthony</h1>
+            <h3>skill:Magician</h3>
+            <h3>Place:Kashmir</h3>
+            <button>Switch to Amar</button><BR></BR>
+            <button>Switch to Akbar</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    
+let Amar={
+        Name:"Amar",
+        Place:"Mathura",
+        Skill:"Chef",
+        
+    }
+   
+
+    let Anthony={
+        Name:"Anthony",
+        Place:"Mathura",
+        Skill:"Dancer",
+        
+    }
+
+    let Akbar={
+        Name:"Akbar",
+        Place:"Mathura",
+        Skill:"Singer",
+        myfun:function(n,p,s){
+            console.log(`${this.Skill}`)
+        }
+    }
+
+
+    Akbar.myfun.call(Anthony)
+   
+
+    
+</script>

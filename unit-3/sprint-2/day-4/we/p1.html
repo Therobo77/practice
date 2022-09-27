@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        /* background: linear-gradient(45deg, #101f61, #2b4cb6 40%, #4171fc 59%, #7fd8ff 85%, #a6e4ff);; */
+        padding: 0%;
+    }
+    #vikash{
+        border: 2px solid blue;
+        width: 30%;
+        height: 30px;
+       background-color: rgb(128, 205, 231);
+        color: rgb(238, 233, 226);
+        margin-left: 50px;
+    }
+    #btn{
+        border: 2px solid blue;
+        height: 35px;
+        width: 10%;
+        background-color: green;
+        color: white;
+    }
+</style>
+
+<body>
+    <!-- <H1>code not working</H1> -->
+    <input type="text" placeholder="ENTER YOUR CITY NAME" id="vikash">
+    <button id="btn" onclick="btnsearch()">SEARCH HERE</button>
+    <center>
+   
+    <div id="container" ></div>
+    <H1>CODE NOT WORKING</H1>
+</center>
+</body>
+</html>
+
+<script>
+//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+
+//url="https://api.openweathermap.org/data/2.5/weather?q=deoghar&appid=c47bf400840de3be9d1f68cbb51de197"
+
+
+//https://api.openweathermap.org/data/2.5/weather?q=pune&appid=4f1ac9715752672af37b0ece001dd714
+
+
+function btnsearch(){
+    
+    let city = document.getElementById('vikash').value;
+
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c47bf400840de3be9d1f68cbb51de197`;
+     
+    fetch(url)
+    .then(function(res){
+        return res.json();
+        //console.log(res.json());
+    })
+    .then(function(res){
+     console.log(res);
+     apend(res);
+    }).catch(function(err){
+        console.log(err);
+    });
+    city.innerText = null;
+
+    
+}
+
+
+function apend(data) {
+    
+    let container = document.getElementById("container");
+
+    container.innerHTML = null;
+    let h2=document.createElement("h2");
+
+    h2.innerText=data.name;
+
+    let temp=document.createElement("p");
+    temp.innerText =`TEMP---${data.main.temp}`;
+
+    let mintemp=document.createElement("p");
+    mintemp.innerText =`MIN_TEMP---${data.main.temp_min}`;
+
+    let maxtemp=document.createElement("p");
+    maxtemp.innerText =`MAX_TEMP---${main.temp_max}`;
+
+    container.append(h2,temp,mintemp,maxtemp);
+}
+
+</script>

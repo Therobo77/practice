@@ -1,0 +1,11 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: bisque;
+    border: 1px solid;
+}

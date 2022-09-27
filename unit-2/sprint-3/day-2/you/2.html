@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>country_continent.html</title>
+</head>
+<body>
+    <select id = "continent_select">
+        <option value = "India"> India </option>
+        <option value="UnitedStatesofAmerica">United States of America</option>
+        <option value="China">China</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Australia">Australia</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+        <option value="SouthAfrica">South Africa</option>
+        <option value="Nigeria">Nigeria</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Brazil">Brazil</option>
+        <option value="Canada">Canada</option>
+        <option value="Singapore">Singapore</option>
+        <option value="Sweden">Sweden</option>	
+    </select>
+    <button id="btn">FIND CONTINENT</button>
+</body>
+</html>
+<script>
+    document.querySelector("#btn").addEventListener("click", findContinent);
+
+        function findContinent() {
+            let country = document.querySelector("#continent_select").value;
+            switch(country){
+                case "India":alert("India belongs to continent of Asia");
+                break;
+                case "UnitedStatesofAmerica":alert("United States of America belongs to continent of North America");
+                break;
+                case "China":alert("China belongs to continent of Asia");
+                break;
+                case "Nepal":alert("Nepal belongs to continent of Asia");
+                break;
+                case "Australia":alert("Australia belongs to continent of Oceania.");
+                break;
+                case "France":alert("France belongs to continent of Europe");
+                break;
+                case "Germany":alert("Germany belongs to continent of Europe");
+                break;
+                case "SouthAfrica":alert("South Africa belongs to continent of Africa");
+                break;
+                case "Nigeria":alert("Nigeria belongs to continent of Africa");
+                break;
+                case "Mexico":alert("Mexico belongs to continent of North America");
+                break;
+                case "Argentina":alert("Argentina belongs to continent of South America");
+                break;
+                case "Brazil":alert("Brazil belongs to continent of South America");
+                break;
+                case "Canada":alert("Canada belongs to continent of North America");
+                break;
+                case "Singapore":alert("Singapore belongs to continent of Asia");
+                break;
+                case "Sweden":alert("Sweden belongs to continent of Europe");
+                break;
+            }
+        }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Amar</h1>
+</body>
+</html>
+
+
+<script>
+    
+    let Amar={
+        Name:"Amar",
+        Place:"Mathura",
+        Skill:"Chef",
+        
+    }
+   
+
+    let Anthony={
+        Name:"Anthony",
+        Place:"Mathura",
+        Skill:"Dancer",
+        
+    }
+
+    let Akbar={
+        Name:"Akbar",
+        Place:"Mathura",
+        Skill:"Singer",
+        myfun:function(n,p,s){
+            console.log(`${this.Skill}`)
+        }
+    }
+
+
+    Akbar.myfun.call(Amar)
+   
+
+    
+
+</script>

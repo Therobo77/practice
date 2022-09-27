@@ -1,0 +1,28 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#news_container{
+    position: absolute;
+    left: 30%;
+    width: 68%;
+    border: 1px solid red;
+}
+.news{
+    position: relative;
+    width: 100%;
+}
+.news img{
+    width: 100%;
+    height: 350px;
+}
+#sidebar{
+    border: 1px solid red;
+    text-align: center;
+    position: fixed;
+    width: 28%;
+    height: 100vh;
+}
+#sidebar img{
+    width: 100%;
+}

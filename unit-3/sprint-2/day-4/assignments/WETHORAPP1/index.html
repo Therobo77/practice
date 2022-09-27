@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITY WETHAR-1</title>
+</head>
+<style>
+    body{
+        padding: 0%;
+        margin: 0%;
+        background-image: "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4wwuf?ver=10fd";
+        background: linear-gradient(45deg, #78b77e, #77b7a0 40%, #8cab9c 59%, #c2dae4 85%, #b76c51);
+    }
+    #container {
+        border: 1px solid;
+       color: red;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgb(154, 161, 161);
+
+    }
+    #container:hover{
+        background-color: black;
+        color: white;
+    }
+    #vikash{
+        border: 2px solid blue;
+        width: 30%;
+        height: 30px;
+       background-color: rgb(128, 205, 231);
+        color: rgb(238, 233, 226);
+       
+    }
+    #vikashlal{
+        height: 35px;
+        background: rgb(13, 14, 14);
+        color: white;
+        margin-left: 500px;
+    }
+    #btn{
+       cursor: pointer;
+        height: 35px;
+        width: 10%;
+        background-color: green;
+        color: white;
+    }
+    .mapouter{
+        position:relative;
+        text-align:right;
+        height:500px;
+        width:100%;
+        display: flex;
+       
+    }
+    .gmap_canvas {
+        overflow:hidden;
+        background:none!important;
+        height:500px;
+       
+       
+    }
+    iframe{
+        width: 1450PX;
+    }
+    p{
+        color: green;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: large;
+    }
+    #navbar{
+        display: flex;
+        
+    }
+   
+
+</style>
+
+<body onload="getlocation()">
+    <div id="navbar" >
+    <input type="text" placeholder="ENTER YOUR CITY NAME" id="vikash">
+    <button id="btn" onclick="btnsearch()">SEARCH HERE</button>
+    <button id="vikashlal">@ map implemented by vikash lal</button>
+</div>
+    <div id="container" ></div>
+   
+
+<div class="mapouter"><div class="gmap_canvas"><iframe width="600" 
+    height="500" id="gmap_canvas"
+     src="" 
+     frameborder="0"
+      scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+    </div></div>
+
+</body>
+</html>
+
+<script>
+    //https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
+    
+    //url="https://api.openweathermap.org/data/2.5/weather?q=deoghar&appid=c47bf400840de3be9d1f68cbb51de197"
+    
+    
+    //https://api.openweathermap.org/data/2.5/weather?q=pune&appid=4f1ac9715752672af37b0ece001dd714
+    
+    //lot&long  https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+    
+    function btnsearch(){
+        
+        let city = document.getElementById('vikash').value;
+    
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c47bf400840de3be9d1f68cbb51de197`;
+         
+        fetch(url)
+        .then(function(res){
+            return res.json();
+            //console.log(res.json());
+        })
+        .then(function(res){
+         console.log(res);
+         apend(res);
+        }).catch(function(err){
+            console.log(err);
+        });
+        city.innerText = null;
+    
+        
+    }
+    
+    
+    function apend(data) {
+        let url=`https://maps.google.com/maps?q=${data.name}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+        
+        let container = document.getElementById("container");
+    
+        container.innerHTML = null;
+        let h2=document.createElement("h2");
+    
+        h2.innerText=data.name;
+    
+        let temp=document.createElement("p");
+        temp.innerText =`TEMP---${data.main.temp}     K`;
+    
+        let mintemp=document.createElement("p");
+        mintemp.innerText =`MIN_TEMP---${data.main.temp_min}     K`;
+    
+        let maxtemp=document.createElement("p");
+        maxtemp.innerText =`MAX_TEMP---${data.main.temp_max}     K`;
+    
+        container.append(h2,temp,mintemp,maxtemp);
+        let iframe=document.getElementById("gmap_canvas");
+        iframe.src=url;
+    }
+
+//     function getlocation(){
+//         navigator.geolocation.getCurrentPosition(success);
+
+//         function success(pos) {
+//     const crd = pos.coords;
+
+//     console.log("Your current position is:");
+//     console.log(`Latitude : ${crd.latitude}`);
+//     console.log(`Longitude: ${crd.longitude}`);
+//     console.log(`More or less ${crd.accuracy} meters.`);
+//     getWeatherOnLocation(crd.latitude, crd.longitude);
+//   }
+//     }
+
+    
+
+    
+    
+
+    function getWeatherOnLocation(lat,lon){
+        
+        let city = document.getElementById('vikash').value;
+    
+        let url=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=4f1ac9715752672af37b0ece001dd714`;
+         
+        fetch(url)
+        .then(function(res){
+            return res.json();
+            //console.log(res.json());
+        })
+        .then(function(res){
+         console.log(res);
+         apend(res);
+        }).catch(function(err){
+            console.log(err);
+        });
+        city.innerText = null;
+    
+        
+    }
+    
+    </script>

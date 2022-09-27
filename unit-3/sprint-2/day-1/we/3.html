@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLIDE SHOW</title>
+    
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>SLIDE SHOW</h1>
+    
+    <input type="text" id="image_url" placeholder="Enter image url"><BR></BR>
+    <button onclick="addimage()" id="addimage">Submit</button>
+    <button onclick="slideShow()" id="slide">click to slide</button>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+    function addimage() {
+        let img_url = document.getElementById("image_url");
+
+        let image= JSON.parse(localStorage.getItem("image")) || [];
+        image.push(img_url.value);
+        //console.log(image);
+
+        localStorage.setItem("images", JSON.stringify(image));
+        image_url.value=null;
+    }
+
+    //addimage();
+    function slideShow() {
+        let image=JSON.parse(localStorage.getItem("images")) || [];
+        let container = document.getElementById("container");
+        let i=0;
+        //console.log(image);
+
+        setInterval(function() {
+            if(i===image.length){
+                i=0;
+            }
+            let img = document.createElement("img");
+            img.src = image[i];
+            container.innerHTML = null;
+
+            container.append(img);
+            i++;
+            
+        },1000);
+
+    }
+   
+
+
+</script>
+
+
+
+
+
+<!-- function slideShow(){
+    let image=JSON.parse(localStorage.getItem("image")) || [];
+
+    let container=document.getElementById("container");
+
+    let i=0;
+
+    setInterval(function(){
+        let img=document.createElement("img");
+        img.src=image[i];
+        container.innerHTML=null
+
+        container.append(img);
+        i++;
+    },1000)
+} -->

@@ -1,0 +1,20 @@
+h1{
+    text-align: center;
+    color: rgb(237, 100, 100);
+}
+h3{
+    text-align: center;
+    color: rgba(85, 150, 207);
+}
+
+
+div{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    margin: auto;
+    width: 350px;
+    height: 500px;
+    /* display: grid;
+    justify-content: center;
+    align-items: center; */
+    border-radius: 10px;
+}

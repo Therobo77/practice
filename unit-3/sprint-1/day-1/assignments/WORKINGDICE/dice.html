@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throw Dice</title>
+    <style>
+        body{
+            background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        }
+        #container{
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        p{
+            font-size: xx-large;
+            color: white;
+            font-weight: bolder;
+        }
+        img{
+            width: 320px;
+        }
+        h1{
+            font-size: 88px;
+            color: gold;
+            text-align: center;
+        }
+        #roll{
+            color: white;
+            background-color: crimson;
+            border: none;
+            outline: none;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #roll:hover{
+            background-color: rgb(233, 76, 76);
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="winner"><h1></h1></div>
+    <div id="container">
+        <div id="member-1">
+            <p>Member A</p>
+            <img src="assets/dice3.png" alt="">
+        </div>
+        <div id="member-2">
+            <p>Member B</p>
+            <img src="assets/dice5.png" alt="">
+        </div>
+        <div id="member-3">
+            <p>Member C</p>
+            <img src="assets/dice2.png" alt="">
+        </div>
+    </div>
+    <div class="btn">
+    <button id="roll" onClick="roll()">ROLL THE DICE</button>
+    </div>
+    <script src="dice.js">
+
+    // function roll(){
+    //     // user 1
+    //     const firstNumberOfRandom = Math.floor(Math.random()*6) + 1;
+
+    //     const firstDiceImage = 'assets/dice' + firstNumberOfRandom + '.png';
+
+    //     document.querySelectorAll('img')[0].setAttribute('src', firstDiceImage);
+
+    //     // user 2
+
+    //     const secondNumberOfRandom = Math.floor(Math.random()*6) + 1;
+
+    //     const secondDiceImage = 'assets/dice' + secondNumberOfRandom + '.png';
+
+    //     document.querySelectorAll('img')[1].setAttribute('src', secondDiceImage);
+
+    //     // user 3
+    //     const thirdNumberOfRandom = Math.floor(Math.random()*6) + 1;
+
+    //     const thirdDiceImage = 'assets/dice' + thirdNumberOfRandom + '.png';
+    //     document.querySelectorAll('img')[2].setAttribute('src', thirdDiceImage);
+    //     // Condition
+    //     if(firstNumberOfRandom > secondNumberOfRandom && firstNumberOfRandom > thirdNumberOfRandom){
+    //         document.querySelector('h1').innerHTML = "Winner is Member A";
+    //     }
+    //     else if(firstNumberOfRandom < secondNumberOfRandom && secondNumberOfRandom > thirdNumberOfRandom){
+    //         document.querySelector('h1').innerHTML = "Winner is Member B";
+    //     }
+    //     else if(thirdNumberOfRandom > secondNumberOfRandom && firstNumberOfRandom < thirdNumberOfRandom){
+    //         document.querySelector('h1').innerHTML = "Winner is Member C";
+    //     }
+    //     else{
+    //         document.querySelector('h1').innerHTML = "It's Draw!";
+    //         document.querySelector('h1').style.color = 'blue';
+    //     }
+    // }
+        
+
+        
+    </script>
+</body>
+</html>

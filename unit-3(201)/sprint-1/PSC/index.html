@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT MANAGEMENT SYSTEM</title>
+</head>
+
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+        border: none;
+    }
+#v-navbar{
+    /* border: 1px solid; */
+    background-color: aquamarine;
+    height: 95px;
+    display: flex;
+    align-items: center;
+    border-radius: 150px;
+    justify-content: space-around;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    /* margin-bottom: 30px;     */
+}
+#v-form{
+    width: 30%;
+    background-color: aqua;
+    height: 350px;
+    padding-top: 80px;
+    border-radius: 150px;
+    padding: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+input{
+    height: 30px;
+    width: 240px;
+    text-align: center;
+}
+#submit{
+    background-color: red;
+    color: white;
+}
+</style>
+
+<body>
+    <!-- Create a student management system for Masai 
+        where you can add students and their details to 
+        the database and also can update it.
+
+Description
+Create a home page where there will be a form for accepting the details of students.
+The form will accept name, course, unit, image and batch.
+Once you submit the form the details should be added to your database.
+Use local storage as your database.
+There should be a navbar on every page where the number of students batch wise should be displayed in real time.
+Like:-
+Batch01 - 50 | Batch02 - 60
+Make a dashboard where you can see the list of all students added to the database.
+There should be an option to remove a particular student if needed.
+When removed the student should be removed from the dom as well as the database.
+Keep the removed student in the local storage with key as trash.
+Work on the functionality first, give a good UI to it. -->
+
+<div id="v-navbar">
+
+    <div>
+        <h1>
+            <a href="data.html">DATA BASE</a>
+        </h1>
+    </div>
+
+    <div>
+        <p id="batch_count"></p>
+    </div>
+</div>
+
+<center>
+<div id="v-form">
+    <!-- <p style="color: red;">ADD STUDENT DETAILS HERE</p><br> -->
+    <form action="" id="form" onsubmit="Data(event)">
+
+        <center>
+
+        <input type="text" id="name" placeholder="Student Name" required><BR></BR>
+
+        <input type="text" id="course" placeholder="Course" required><BR></BR>
+
+        <input type="number" id="unit" placeholder="Unit" required><BR></BR>
+
+        <input type="text" id="image" placeholder="Image Url" required><BR></BR>
+
+        <input type="number" id="batch" placeholder="Batch" required><BR></BR>
+
+        <input type="submit"  id="submit">
+
+    </center>
+    </form>
+</div>
+</center>
+
+</body>
+</html>
+
+<script src="index.js">
+
+</script>

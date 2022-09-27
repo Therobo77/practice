@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALL BACK</title>
+</head>
+<body>
+    <center>
+        <h1>AMAR AKBAR ANTHONY</h1>
+
+        <P>FOR BETTER UNDERSTANDING CHECK THE CONSOLE</P>
+    </center>
+</body>
+</html>
+
+<script>
+
+let people = {
+
+    name:'pablo',
+    skill:'skill',
+    city:'city',
+
+
+    logkyakahenge(){
+        console.log(`I AM ${this.name} A ${this.skill} LIVES IN ${this.city}`);
+
+    }
+
+
+
+}
+
+let amar={
+    name:'Amar',
+    skill:'Singer',
+    city:'Goa',
+
+    logkyakaheng(){
+        console.log(`I AM ${amar.name} A ${this.skill} LIVES IN ${amar.city}`);
+
+    }
+}
+
+
+let akbar={
+    name:'Akbar',
+    skill:'chef',
+    city:'Mumbai',
+
+    
+    logkyakaheng(){
+        console.log(`I AM ${akbar.name} A ${this.skill} LIVES IN ${akbar.city}`);
+
+    }
+}
+
+
+let anthony={
+    name:'Anthony',
+    skill:'Magician',
+    city:'Kashmir',
+
+    
+    logkyakaheng(){
+        console.log(`I AM ${anthony.name} A ${this.skill} LIVES IN ${anthony.city}`);
+
+    }
+}
+
+akbar.logkyakaheng.call(anthony);
+</script>

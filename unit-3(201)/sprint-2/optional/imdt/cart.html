@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h2 id="cart_total"></h2>
+      <!--Show cart total with id:- "cart_total" here, do not add anything only Total value. Not even "Total - 1200Rs" but like this "1200" -->
+    </div>
+    <div id="cartItems">
+      <!--Show items added to cart here-->
+      <!-- add an remove button to each item so that you can remove that dish from cart, give the button HTML class as 'remove' -->
+    </div>
+
+    <!-- Provide a checkout button with id as "checkout" to go to checkout.html page -->
+  </body>
+</html>
+<script src="./scripts/cart.js">
+  
+let arr=JSON.parse(localStorage.getItem("cart_items"))||  []
+arr.forEach(function(elem,index){
+
+    let cartItems=document.getElementById("cartItems")
+    let box=document.createElement("div");
+
+        let image=document.createElement("img");
+        image.src=elem.image
+        let price=document.createElement("h1");
+        price.innerText=elem.price
+
+        let remove=document.createElement("button");
+        remove.innerText="remove"
+        remove.addEventListener("click",function(){
+            dlt(elem,index)
+        })
+
+        box.append(image,price,remove)
+        cartItems.append(box)
+
+ 
+    let cart_T=document.getElementById("cart_total")
+    cart_T.innerText= sum=sum+elem.price;
+    console.log(cart_T)
+})
+
+function dlt(elem,index){
+    arr.splice(index,1)
+    localStorage.setItem("cart_items",JSON.stringify(arr))
+    window.location.reload()
+
+}
+</script>

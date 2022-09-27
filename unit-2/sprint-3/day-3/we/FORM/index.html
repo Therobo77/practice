@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM</title>
+    <style>
+        div{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 300px;
+            margin: auto;
+            padding-top: 50px;
+            text-align: center;
+        }
+        #button{
+            background-color: rgb(218, 27, 27);
+            color: white;
+            border-radius: 6px;
+        }
+        h4{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form action="">
+            <h4>FORM OF REGISTRATION</h4>
+            <label for="">WRITE YOUR NAME</label><br>
+            <input type="text" placeholder="Write Your Name" id="name">
+            <br><label for="">WRITE YOUR AGE</label><br>
+            <input type="number" placeholder="Write Your Age" id="age">
+            <br><label for="">WRITE YOUR EMAIL</label><br>
+            <input type="text" placeholder="Write Your Email" id="email">
+            <br><label for="">WRITE YOUR NUMBER</label><br>
+            <input type="number" placeholder="Write Your Mobile No." id="mobile">
+            <br>
+            <br>
+            <select name="Gender" id="gen">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select><br>
+            <br>
+            <input type="submit" id="button">
+        </form>
+    </div>
+    <h1></h1>
+    
+</body>
+</html>
+<script>
+    document.querySelector("form").addEventListener("submit",myfun);
+
+    function myfun(){
+         event.preventDefault()
+        let vks=document.querySelector("#name").value;
+        let ag=document.querySelector("#age").value;
+        let mail=document.querySelector("#email").value;
+        let mbl=document.querySelector("#mobile").value;
+        let ml=document.querySelector("#gen").value;
+        // document.querySelector("h1").innerText=vks
+
+
+        console.log(vks);
+        console.log(ag);
+        console.log(mail);
+        console.log(mbl);
+        console.log(ml);
+    }
+</script>

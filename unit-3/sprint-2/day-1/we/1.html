@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asychronous Programming</title>
+</head>
+<style>
+    body {
+        text-align: center;
+    }
+</style>
+<body>
+    <h1>Asychronous Programming</h1>
+    <h2>Timer increased By 1 Secend</h2>
+    <h1 id="timer"></h1>
+
+</body>
+</html>
+<script>
+function timer (){
+    let count=0;
+
+    // step1;
+    let roko=setInterval(function(){
+        if (count==30){
+
+        clearInterval(roko);
+         }
+        let h1=document.getElementById("timer");
+        h1.innerText = count;
+        count++
+    },1000);
+}
+
+timer();
+
+// setTimeout will run only one time.
+
+//setInterval run again and again so we use set interval 
+
+
+</script>

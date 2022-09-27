@@ -1,0 +1,16 @@
+#container {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding: 30px;
+    gap: 15px;
+  }
+  #container>div {
+    border: 1px solid #ccc;
+    padding: 13px;
+    text-align: center;
+    border-radius: 23px;
+  }
+  img{
+    height: 150px;
+    width: 150px;
+  }

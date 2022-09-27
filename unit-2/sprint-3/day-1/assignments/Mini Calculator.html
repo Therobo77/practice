@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="enter 1st number" id="1stnum">
+    <input type="number" placeholder="enter 2nd number" id="2ndnum">
+    <hr>
+
+
+    <button onclick="add()">add</button>
+    <button onclick="subs()">substract</button>
+    <button onclick="mul()">multiply</button>
+    <button onclick="div()">divide</button>
+</body>
+</html>
+
+<script>
+    function add() {
+        let fst = +(document.getElementById("1stnum").value);
+        let scnd = +(document.getElementById("2ndnum").value);
+        // fst=+(fst);
+        // scnd=+(scnd)
+        alert(fst+scnd)
+
+    }
+
+    function subs() {
+        let fst = +(document.getElementById("1stnum").value);
+        let scnd = +(document.getElementById("2ndnum").value);
+        // fst=+(fst);
+        // scnd=+(scnd)
+        alert(fst-scnd)
+
+    }
+
+    function mul() {
+        let fst = +(document.getElementById("1stnum").value);
+        let scnd = +(document.getElementById("2ndnum").value);
+        // fst=+(fst);
+        // scnd=+(scnd)
+        alert(fst*scnd)
+
+    }
+    function div() {
+        let fst = +(document.getElementById("1stnum").value);
+        let scnd = +(document.getElementById("2ndnum").value);
+        // fst=+(fst);
+        // scnd=+(scnd)
+        alert(fst/scnd)
+
+    }
+    
+
+</script>

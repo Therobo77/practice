@@ -1,0 +1,35 @@
+body{
+    margin: 0%;
+    padding: 0%;
+}
+
+
+
+#navbar{
+    border: 1px solid ;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#cont{
+    border: 1px solid;
+    display: flex;
+}
+
+#sidebar{
+    
+    text-align: center;
+    
+}
+#results{
+    text-align: center;
+}
+
+#results>div{
+    border: 1px solid ;
+}
+img{
+    height: 300px;
+    width: 100%;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+// function fun (a,...b){
+//     console.log(arguments.length);
+// }
+// fun(3,'michale','hello');
+
+// const a =['a','b'];
+// const b =[0,1,2];
+// a.push.apply(a,b);
+
+// console.log(a);
+
+
+// function fun (a,...b){
+//     return a*b.length
+// }
+// // fun(3,'michale','hello');
+
+// console.log(fun(2,'michale','hello'));
+
+
+
+// function p(name){
+//     this.name = name;
+// }
+// let p1 = new p("andy");
+// p1.prototype.print = function(){
+//     console.log(this.name);
+// }
+// p1.print();
+
+// {f_name,{pincode}}
+
+// const arr = new Array(4).fill([]);
+// arr[2].push(5);
+// console.log(arr);
+
+// let a=10;
+// {
+//     let a=20;
+// }
+
+// const ar =['a','b','ct','d'];
+// let [a,b,c]=ar;
+// console.log(c);
+
+// const s =new function('a','n','return');
+// console.log(s(2,6));
+
+// let ar =[];
+// for (let i=1; i<5; i++){
+//     ar.push(()=>{
+//         console.log(i);
+//     })
+// }
+// ar.forEach((el) => el());
+
+// const p ={
+//     f_name: 'ar',
+//     l_name: 'ar2',
+// }
+
+// // { f_name: f, l_name: l }
+// {f_name, l_name}
+
+// { f: f_name, l: l_name }
+
+
+
+// let s ='ajjdjjd'
+// let sr =[...s];
+// console.log(sr);
+
+// let o={};
+// let ob={};
+
+// console.log(o==ob);
+
+// const am ={m:1000};
+// const ak = Object.create(am);
+// const an = Object.create(an);
+
+// console.log(an.m);
+
+let pr = () => {
+    var name = 'prnm';
+
+    return function(){
+        return name;
+    }
+    
+};
+
+
+console.log(pr()());
+
+
+
+var ar = [1,2,3,4,5];
+
+function x(){
+    // a=19;
+    console.log(this);
+}
+x();
+
+
+console.log(`${calling} Nrupul`);
+
+let calling = true;
+
+const nm = [1,2,3,4,5];
+
+const max = Math.max.apply(null,nm);
+
+console.log(typeof undefined);
+
+
+var a = 1;
+
+setTimeout(()=>{
+    console.log(a);
+},0)
+for(let i = 0; i <10;i++){
+
+}
+a++;
+
+
+function car (name,price){
+    this.name = name;
+    this.price = price;
+}
+function truck (){
+    car.call(this,'volvo',"12L");
+    this.fuel = "dsl"
+}
+
+console.log(new truck().name);
+
+</script>

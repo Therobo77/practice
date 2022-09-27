@@ -1,0 +1,63 @@
+/* Fill CSS here */
+h1{
+    text-align: center;
+    color: rgb(0, 4, 255);}
+.blu{
+    background-color: rgb(71, 17, 137);
+    font-size: 17px;
+    font-weight: bold;
+}
+
+div{
+    width:80%;
+    height:600px;
+    display: flex;
+    margin: auto;
+    margin-top: 30px;
+    gap:10px;
+    justify-content: center;
+    align-items: baseline;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+form{
+    width:20%;
+   font-size: 20px;
+   font-weight: 600;
+   padding: 40px;
+   background-color: rgba(143, 144, 172, 0.341);
+   margin-left: 10px;
+   box-shadow: rgba(215, 208, 208, 0.24) 0px 3px 8px;
+
+}
+::placeholder{
+    font-size: 13px;
+   
+}
+form>input{
+margin-bottom: 20px;
+padding: 10px;
+outline: invert;
+border-radius: 13px;
+}
+select{
+    margin-bottom: 20px;
+}
+table{
+    width:80%
+}
+tr{
+    width:10%;
+    text-align: center;
+}
+th{ background-color:  rgb(152, 231, 227);
+    padding:30px;
+    font-weight: 900;
+    font-size: 20px;
+}
+td{
+    background-color: rgb(40, 58, 75);
+    padding:25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 15px;
+    font-weight: bolder;
+}

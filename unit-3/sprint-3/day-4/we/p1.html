@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLD PRE CLASS</title>
+</head>
+<body>
+    <H1>LLD PRE CLASS</H1>
+</body>
+</html>
+<script>
+    class vehicle {
+        constructor(type,regNumber){
+            this._type = type;
+            this._regNumber = regNumber;
+        }
+        get type(){
+            return this._type;
+        }
+        set type(value){
+            this._type = value;
+        }
+    }
+
+    let v1=new vehicle('car','mh29');
+    v1.type='bike';
+    console.log(v1);
+
+</script>

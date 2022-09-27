@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE FOR WINNER</title>
+</head>
+<style>
+    div{
+       display: flex;
+        height: 60px;
+        width: 60px;
+        border: 1px solid black;
+        /* background-color: blue; */
+        margin: 30px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8%;
+    }
+    #winner{
+        height: 70px;
+        width: 200px;
+        background-color: rgb(34, 169, 176);
+    }
+    #mid{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 70%;
+        height: 200px;
+        border: none;
+        border-top: 2px solid violet;
+        border-bottom: 2px solid blue;
+    }
+</style>
+<body>
+    <!-- How Js Works
+Level: 1
+Type: Applied
+Avg. Duration: 2 Hrs
+Problem Statement : - Throw Dice
+You and your two other team members are doing your construct week project. An issue arises 
+in your project and all three of you come up with a solution. All the three solutions are feasible 
+and each one of you wants to implement his own solution. Hence all of you decided to roll a dice 
+and whoever gets the maximum score will implement his solution. But the problem is you cannot roll 
+a dice online, so you, being an active team member, decided to make an app with three dice showing 
+a random number between 1 to 6 as described below.
+
+Description :-
+Create an Index.html file
+Create three “DIV”, which will represent three dice and show a random number between 1 to 6.
+First will represent score for Member A
+Second will represent score for Member B
+And third will represent score for Member C
+Make a button with text content “ROLL THE DICE”
+On pressing the button all the three dice should roll and 
+show a random number between 1 to 6.
+Make a “DIV” at the top which will show the winner
+Things to follow :-
+First dice will have id “member-1”.
+Second dice will have id “member-2”.
+Third dice will have id “member-3”.
+Roll the dice button will have id “roll”.
+The winner showing div will have id “winner”
+The winning dice will be in color green.
+The Second scorer dice will be in yellow
+And the dice who scored least should be in red.
+In case of draw make the dice scoring equal appear blue. -->
+<center>
+    <div id="winner"></div>
+    <div id="mid">
+        
+    <div id="member-1"></div>
+    <div id="member-2"></div>
+    <div id="member-3"></div>
+
+    </div>
+    <button id="roll">ROLE THE DICE</button>
+
+</center>
+  
+</body>
+</html>
+<script>
+let user1=document.querySelector("#member-1");
+let user2=document.querySelector("#member-2");
+let user3=document.querySelector("#member-3");
+let res=document.querySelector("#winner");
+let button=document.querySelector("#roll");
+
+button.addEventListener("click",findWinner);
+
+function findWinner(){
+let u1=Math.floor(Math.random()*6+1);
+user1.innerHTML = u1;
+let u2=Math.floor(Math.random()*6+1);
+user2.innerHTML = u2;
+let u3=Math.floor(Math.random()*6+1);
+user3.innerHTML = u3;
+
+
+if(u1>u2 && u1>u3&&u3>u2) {
+    user1.style.backgroundColor ="green";
+    res.innerHTML = "Member-1"
+    user3.style.backgroundColor ="yellow";
+    user2.style.backgroundColor ="red";
+    
+}
+if(u1>u2 && u1>u3&&u2>u3) {
+    user1.style.backgroundColor ="green";
+    res.innerHTML = "Member-1"
+    user2.style.backgroundColor ="yellow";
+    user3.style.backgroundColor ="red";
+    
+}
+
+else if(u2>u3 && u2>u1&&u1>u3) {
+    user2.style.backgroundColor ="green";
+    res.innerHTML = "Member-2"
+    user1.style.backgroundColor ="yellow";
+    user3.style.backgroundColor ="red";
+
+}
+else if(u2>u3 && u2>u1&&u3>u1) {
+    user2.style.backgroundColor ="green";
+    res.innerHTML = "Member-2"
+    user3.style.backgroundColor ="yellow";
+    user1.style.backgroundColor ="red";
+
+}
+else if(u3>u2 && u3>u1&&u2>u1) {
+    user3.style.backgroundColor ="green";
+    res.innerHTML = "Member-3"
+    user2.style.backgroundColor ="yellow";
+    user1.style.backgroundColor ="red";
+
+}
+else if(u3>u2 && u3>u1&&u1>u2) {
+    user3.style.backgroundColor ="green";
+    res.innerHTML = "Member-3"
+    user1.style.backgroundColor ="yellow";
+    user2.style.backgroundColor ="red";
+
+}
+else if(u1==u2&& u3>u1) {
+    user1.style.backgroundColor ="blue";
+    user2.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="green";
+    res.innerHTML = "Member-3"
+}
+else if(u1==u2&& u3<u1) {
+    user1.style.backgroundColor ="blue";
+    user2.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="red";
+    
+}
+else if(u2==u3&& u1>u2) { 
+    user2.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="blue";
+    user1.style.backgroundColor ="green";
+    res.innerHTML = "Member-1"
+
+}
+else if(u2==u3&& u1<u2) { 
+    user2.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="blue";
+    user1.style.backgroundColor ="red";
+    
+
+}
+else if(u1==u3&& u2>u3) { 
+    user1.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="blue";
+    user2.style.backgroundColor ="green";
+    res.innerHTML = "Member-2"
+
+}
+else if(u1==u3&& u2<u3) { 
+    user1.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="blue";
+    user2.style.backgroundColor ="red";
+    
+
+
+}
+else{
+    user1.style.backgroundColor ="blue";
+    user3.style.backgroundColor ="blue";
+    user2.style.backgroundColor ="blue";
+    res.innerHTML = "GAME IS DRAW"
+
+}
+}
+
+
+</script>

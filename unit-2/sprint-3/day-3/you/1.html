@@ -1,0 +1,26 @@
+var person = {
+    name : "Sidharth",
+    age : 100,
+    height: "6 Ft 12 In",
+    gender : "Female",
+    hobbies: ["Coding", "Weight Lifting", "Running", "Eating"]
+    }
+    
+    var json = JSON.stringify(person)
+    
+    console.log(json)
+    
+    var regularObject = JSON.parse(json)
+    
+    console.log(regularObject)
+    Output:
+    
+    {"name":"Sidharth","age":100,"height":"6 Ft 12 In","gender":"Female","hobbies":["Coding","Weight Lifting","Running","Eating"]}
+    
+    {
+    name : "Sidharth",
+    age : 100,
+    height: "6 Ft 12 In",
+    gender : "Female",
+    hobbies: ["Coding", "Weight Lifting", "Running", "Eating"]}
+    

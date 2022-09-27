@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIRTUAL MCDONALD'S</title>
+</head>
+<style>
+    #main{
+        display: flex;
+        gap: 80px;
+        justify-content: space-around;
+    }
+    img{
+        width: 200px;
+        height: 200px;
+        margin-top: 0px;
+    }
+</style>
+<body>
+    <div id="main">
+    <div>
+   <form id="form" onsubmit="addFood(event)">
+    <h1>VIKASH AND COMPANY</h1>
+    <h2>ORDER YOUR FOOD</h2>
+    BURGER:
+    <input type="checkbox" id="burger"><br>
+    PIZZA:
+    <input type="checkbox" id="pizza" ><br>
+    PANI PURI:
+    <input type="checkbox" id="panipuri" ><br>
+    HALWA:
+    <input type="checkbox" id="halwa" ><br>
+    <BR></BR>
+    <input type="submit" value="ORDER YOUR FOOD" id="button" >
+
+   </form>
+   </div>
+   <div>
+    <h2>vikash</h2>
+    <img src="https://media1.tenor.com/images/616faf1625c7b83fdd1a8eb8737f7142/tenor.gif?itemid=3425302" alt="">
+   </div>
+</div>
+    
+</body>
+</html>
+
+<script>
+    form = document.querySelector("#form");
+    function addFood(event){
+        //event.preventDefault();
+        //console.log("hell")
+        let burger=document.querySelector("#burger");
+        //console.log(burger.checked);
+        let Burger=burger.checked;
+        return Burger;
+
+        let pizza=document.querySelector("#pizza");
+        //console.log(pizza.checked);
+        let Pizza=burger.checked;
+        return Pizza;
+
+        let panipuri=document.querySelector("#panipuri");
+        //console.log(panipuri.checked);
+        let Panipuri=burger.checked;
+        return Panipuri;
+
+        let halwa=document.querySelector("#halwa");
+        //console.log(halwa.checked);
+        let Halwa=halwa.checked;
+        return Halwa;
+       // return true
+
+    }
+       let food=new Promise(function(resolve,rejected){
+
+        setTimeout(function(){
+            if(addFood(event)==true){
+                resolve("your food is ordeeded");
+            }else{
+                rejected("please try again");
+            }
+        },1000);
+       });
+
+       async function new_food(){
+        try{
+            let result = await food
+            console.log(result);
+        }
+        catch(error){
+            console.log(error);
+        }
+       }
+       new_food();
+
+
+
+
+    
+
+    
+    
+</script>

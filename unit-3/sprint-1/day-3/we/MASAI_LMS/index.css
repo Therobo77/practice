@@ -1,0 +1,19 @@
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgb(112, 168, 216);
+    color: white;
+}
+#main{
+    margin:10px auto;
+    border: 8px solid darkorange;
+    width: 30%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: beige;
+}

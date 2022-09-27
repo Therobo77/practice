@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(3,1fr);
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        padding-top: 20px;
+    }
+    #main>div{
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 7px;
+        text-align: center;
+    }
+    div>img{
+        width: 100%;
+    }
+   
+    p+img{
+        height: 50px;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div id="main">
+
+    </div>
+</body>
+</html>
+
+<script>
+let investors =[
+    {name:"Vijay Shekhar Sharma",
+    role:"Founder & CEO",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    { name:"Kunal Sah",
+    role:"Founder ",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    },
+    { name:"Vijay Shekhar Sharma",
+    role:"Founder & CEO",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {
+        name:"Kunal Sah",
+    role:"Founder ",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    },
+    {name:"Vijay Shekhar Sharma",
+    role:"Founder & CEO",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {name:"Kunal Sah",
+    role:"Founder ",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    },
+    {name:"Vijay Shekhar Sharma",
+    role:"Founder & CEO",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {name:"Kunal Sah",
+    role:"Founder ",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    },
+    {name:"Vijay Shekhar Sharma",
+    role:"Founder & CEO",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {name:"Kunal Sah",
+    role:"Founder ",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    },
+    {name:"Vijay Shekhar Sharma",
+    role:"Founder & CEO",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"},
+    {name:"Kunal Sah",
+    role:"Founder ",
+    image:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+    companyLogo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    }
+    ]
+    
+investors.map(function(elem){
+    let box=document.createElement("div");
+    let img=document.createElement("img");
+    img.setAttribute("src",elem.image,);
+    let name=document.createElement("h2");
+    name.innerText=elem.name;
+    let role=document.createElement("p");
+    role.innerText=elem.role;
+    let companyLogo=document.createElement("img");
+    companyLogo.setAttribute("src",elem.companyLogo);
+
+    box.append(img,name,role,companyLogo);
+
+    document.querySelector("#main").append(box);
+});
+  </script>

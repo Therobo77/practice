@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA MOTERS</title>
+    <style>
+        *{
+            background-color: aqua;
+            /* border: none; */
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>TATA MOTERS</h1><br>
+        <p>LAZY ENGENEERS <br> YOU CAN ADD VEHICLE FUNCTION HERE</p>
+
+        <form action="" id="form" onsubmit="myfun(event)">
+        
+            <input type="text" id="name" placeholder="Car Name" ><BR></BR>
+
+
+            <input type="text" id="color" placeholder="COLOUR" ><BR></BR>
+
+            <input type="text" id="height" placeholder="HEIGHT" ><BR></BR>
+
+            <input type="text" id="model" placeholder="EXCEPTED MODEL" ><BR></BR>
+
+            <input type="submit" id="add">
+
+
+        </form>
+    </center>
+</body>
+</html>
+
+<script>
+
+
+let coreProperty={
+    company:"tata",
+    wheel:4,
+    door:4,
+    staring:1,
+    usedMetal:"steel"
+}
+
+let arrForCar = [];
+
+
+function myfun(event){
+    event.preventDefault();
+
+    let car = Object.create(coreProperty);
+
+    car.name = document.getElementById("name").value;
+
+    car.COLOUR = document.getElementById("color").value;
+
+    car.HEIGHT = document.getElementById("height").value;
+
+    car.MODEL = document.getElementById("model").value;
+
+    arrForCar.push(car);
+
+    console.log(arrForCar);
+}
+
+// let arr=[1,2,3,4,5,6,7,8,]
+
+// arr.pop();
+// console.log(arr);
+</script>
